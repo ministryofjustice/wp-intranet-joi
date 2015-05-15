@@ -1,0 +1,138 @@
+/* print stylesheet */
+body 
+{ margin: 0; 
+  padding: 0; 
+  font-size: 70%;
+  color: #000;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  background: #fff}
+h1, h2, h3, h4, h5, h6 { color: #000 }
+h1 {font-size: 120%; 
+    padding-top: 5px}
+h2 {font-size: 110% }    
+h3 {font-size: 105% }   
+h4 {font-size: 100% }
+h5 {font-size: 95% }
+h6 {font-size: 85% }
+ul {list-style-type: disc}
+a:link    { color: #339999; text-decoration: underline}
+a:hover  { color: #000; text-decoration: underline}
+a:visited { color: #339999; text-decoration: underline}
+hr{
+color: #000;
+background-color: #339999;
+padding: 0;
+margin: 0;
+height: 1px}
+/* list style for a to z styled pages */
+#atoz{ 
+  width: 95%;
+  height: 21px;
+  padding: 0px;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #5AA69C;
+  background-color: #fff}  
+ul#atoz2{ 
+  list-style: none;
+  margin: 4px;
+  padding: 0px;}
+ul#atoz2 li{ 
+  display: inline; 
+  margin: 0px;
+  padding: 0px;
+  background-color: #fff;
+  text-decoration: none;
+  text-align: center;
+  color: #000}
+ul#atoz2 li a{ 
+  margin: 0px 0px 0px 0px;
+  padding: 4px 5px 4px 6px;
+  background-color: #fff;
+  text-decoration: none;
+  text-align: center;
+  color: #000}
+ul#atoz2 li a:hover{
+  background-color: #D4E8E6}
+ul#atoz2 li.youhere a {
+  color: #000;
+  background-color: #D4E8E6;
+  text-decoration: none}
+p
+{ padding-right: 20px;}
+td p
+{ font-size: 70%;
+  color: #000;
+  font-family: Verdana, Arial, Helvetica, sans-serif}
+  
+td h2 {font-size: 80%}
+#imgbar
+{ display : none}
+#imgbar img 
+{display : none}
+#shadow
+{ display : none}
+  
+#portrait
+{ height: 100%;
+  width: 40%;
+  border-right: 1px solid red}
+#hnav 
+{ display : none}  
+ul#hnav2 
+{ display : none}
+ul#hnav2 li 
+{ display : none}
+ul#hnav2 li.x 
+{ display : none}
+ul#hnav2 li a
+{ display : none}
+ul#hnav2 li a:hover
+{ display : none}
+ul#hnav2 li.youhere a 
+{ display : none}
+#crumb
+{ position: absolute;
+  width: 400px;
+  height: 23px;
+  padding: 5px 0px 5px 5px;
+  margin: 0;
+  align:left;
+  text-align: middle;
+  border:0px orange solid;}
+#date a {
+  text-decoration: none}
+#leftnav 
+{ display : none}
+ul#leftnav2 
+{ display : none}
+ul#leftnav2 li 
+{ display : none}
+ul#leftnav2 li a
+{ display : none}
+ul#leftnav2 li a:hover
+{display : none}
+ul#leftnav2 li.youhere a 
+{display : none}
+#content 
+{ position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;}
+  
+#topspacer
+{ display : none}
+div.rightdiv {display : none}
+div.rightdiv form {display : none}
+#righttop {display : none}
+#rightbottom {display : none}
+ul#whatsnew{display : none}
+ 
+input#go { display : none}
+p.2 { 
+  line-height: 90%}
+#content .footer {
+  position : relative;
+  width: 350px;
+  left : 0px;
+  padding : 20px 0px 15px 0px}

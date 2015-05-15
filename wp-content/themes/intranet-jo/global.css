@@ -1,0 +1,307 @@
+/* Hello - This stylesheet is for IE browsers only */
+body 
+{ margin: 0; 
+  padding: 0; 
+  background: #fff url() repeat-y;
+  font-size: 70%;
+  color: #505252;
+  font-family: Verdana, Arial, Helvetica, sans-serif}
+
+.reddot
+{ font-size: 100%;
+  color: #ff0000;
+  font-family: Verdana, Arial, Helvetica, sans-serif}
+
+
+h1, h2, h3, h4, h5, h6 { color: #505252 }
+h1 {font-size: 120%; 
+    padding-top: 5px}
+h2 {font-size: 110% }    
+h3 {font-size: 105% }   
+h4 {font-size: 100% }
+h5 {font-size: 95% }
+h6 {font-size: 85% }
+a:link    { color: #339999; text-decoration: underline}
+a:hover  { color: #333; text-decoration: underline}
+a:visited { color: #339999; text-decoration: underline}
+p  {padding-right: 20px;}
+
+hr {color: #505252;
+    background-color: #505252;
+ padding: 0px;
+ margin: 0;
+ border: 0px;
+    height: 1px}
+ul {padding: 0px 0px 0px 0px;}
+td p
+{ font-size: 70%;
+  color: #333;
+  font-family: Verdana, Arial, Helvetica, sans-serif}
+  
+td h2 {font-size: 80%}
+#imgbar
+{ margin: 0; 
+  padding: 0; 
+  border-bottom: 0px; 
+  border-top: 2px solid #5AA69C; 
+  width:770px}
+#imgbar img 
+{padding: 0; 
+ margin: 0; 
+ border-bottom: 1px solid #5AA69C}
+#shadow
+{ position: absolute;
+  width: 770px;
+  height: 30px;
+  background:  url(/wp-content/uploads/infoshadow-right-ie.gif) bottom right no-repeat;
+  z-index:1}
+#hnav 
+{ position: absolute;
+  width: 770px;
+  height: 25px;
+  padding: 0px;
+  margin: 0;
+  text-align: right;
+  border-bottom: 1px solid #5AA69C;
+  background-color: #fff}
+ul#hnav2 
+{ list-style: none;
+  margin: 5px 0px 1px 3px;
+  padding: 0px;}
+ul#hnav2 li 
+{ border-left: 1px solid #5AA69C;
+  border-right: 0px; 
+  display: inline; 
+  padding: 0px}
+ul#hnav2 li.x 
+{ border-left: 1px solid #5AA69C;
+  border-right: 1px solid #5AA69C; 
+  padding: 0px}
+ul#hnav2 li a
+{ margin: 0px 0px 0px 0px;
+  padding: 8px 4px 8px 4px;
+  background-color: #fff;
+  text-decoration: none;
+  text-align: right;
+  color: #505252}
+ul#hnav2 li a:hover { 
+  color: #333;
+  background-color: #eaeaea}
+/* reddot hnav trickery begins */
+body#who ul#hnav2 li#who a {
+  color: #333;
+  background-color: #eaeaea;
+  text-decoration: none}
+body#goodidea ul#hnav2 li#goodidea a {
+  color: #333;
+  background-color: #eaeaea;
+  text-decoration: none}
+body#elis ul#hnav2 li#elis a {
+  color: #333;
+  background-color: #eaeaea;
+  text-decoration: none}
+body#lsite ul#hnav2 li#lsite a {
+  color: #333;
+  background-color: #eaeaea;
+  text-decoration: none}
+body#dcainfo ul#hnav2 li#dcainfo a {
+  color: #333;
+  background-color: #eaeaea;
+  text-decoration: none}
+body#links ul#hnav2 li#links a {
+  color: #333;
+  background-color: #eaeaea;
+  text-decoration: none}
+body#sitemap ul#hnav2 li#sitemap a {
+  color: #333;
+  background-color: #eaeaea;
+  text-decoration: none}
+  
+/* reddot hnav trickery ends */
+#date
+{ position: absolute;
+  width: 250px;
+  height: 23px;
+  padding: 5px 0px 5px 5px;
+  margin: 0;
+  align:left;
+  text-align: middle;
+  border:0px orange solid;}
+#date a {
+  text-decoration: none}
+#leftnav 
+{ position: absolute;
+  top: 128px;
+  float: left; 
+  width: 119px; 
+  display: block;
+  padding: 0px; 
+  margin: 0; 
+  font-size: 100%}
+ul#leftnav2 
+{ margin: 0; 
+  padding-top: 0px}
+ul#leftnav2 li 
+{ border-bottom: 1px dotted #525252; 
+  width: 119px;
+  padding: 0px 0px}
+ul#leftnav2 li a
+{ display: block;
+  margin:0;
+  padding: 6px 3px 6px 5px;
+  background-color: #eaeaea;
+  text-decoration: none;
+  text-align: left;
+  color: #505252;
+  width: 119px}
+ul#leftnav2 li a:hover
+{ color: #333;
+  background-color: #cdcdcd}
+/* reddot leftnav trickery begins */
+body#home ul#leftnav2 li#home-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#library ul#leftnav2 li#library-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#facilities ul#leftnav2 li#facilities-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#hr ul#leftnav2 li#hr-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#finance ul#leftnav2 li#finance-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#projects ul#leftnav2 li#projects-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#howto ul#leftnav2 li#howto-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#gowrong ul#leftnav2 li#gowrong-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#health ul#leftnav2 li#health-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#economics ul#leftnav2 li#economics-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+body#communications ul#leftnav2 li#communications-nav a {
+  color: #333;
+  background-color: #cdcdcd;
+  text-decoration: none}
+
+
+/* reddot leftnav trickery ends */
+#content 
+{ position: absolute;
+  width: 650px;
+  left: 120px;
+  top: 133px;
+  margin: 0; 
+  padding: 0px 0px 0px 20px;
+  border: 0px dotted red}
+div.rightdiv {
+  float: right;
+  width : 177px;
+  margin: 0px 0px 20px 20px;
+  padding : 0;
+  border-left: 1px dotted #525252;
+  background : #eaeaea}
+div.rightdiv form {
+  width : 177px;
+  background : #eaeaea;
+  margin: 0; 
+  padding : 2px 1px 4px 4px;
+  border-bottom: 1px dotted #525252}
+#righttop {
+  margin: 0px;
+  padding: 0px 5px 10px 10px}
+#rightbottom {
+  width : 208px;
+  background : #eaeaea;
+  margin: 0px;
+  height : 20px;
+  border-top: 1px dotted #525252;
+  border-bottom: 1px dotted #525252; 
+  padding: 2px 10px 2px 2px}
+div.rightdiv p
+{ padding: 0;}
+ 
+input#go { 
+  border-left: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  background: #cdcdcd;
+  margin: 2;
+  height: 18;
+  width: 20;
+  padding: 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 100%;
+  font-family: inherit;
+  line-height: inherit;
+  display: inline-block;
+  overflow: visible}
+p.2 { 
+  line-height: 90%}
+/* list style for a to z styled pages */
+#atoz{ 
+  width: 95%;
+  height: 21px;
+  padding: 0px;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #505252;
+  background-color: #fff}  
+ul#atoz2{ 
+  list-style: none;
+  margin: 4px;
+  padding: 0px;}
+ul#atoz2 li{ 
+  display: inline; 
+  margin: 0px;
+  padding: 0px;
+  background-color: #fff;
+  text-decoration: none;
+  text-align: center;
+  color: #505252}
+ul#atoz2 li a{ 
+  margin: 0px 0px 0px 0px;
+  padding: 4px 5px 4px 6px;
+  background-color: #fff;
+  text-decoration: none;
+  text-align: center;
+  color: #505252}
+ul#atoz2 li a:hover{
+  background-color: #eaeaea}
+ul#atoz2 li.youhere a {
+  color: #505252;
+  background-color: #eaeaea;
+  text-decoration: none}
+#content .footer {
+  position : relative;
+  width: 350px;
+  left : 0px;
+  padding : 40px 0px 8px 0px}
+
+
+
+table#alphalist td 
+{ font-size: 70%;
+  color: #333;
+  font-family: Verdana, Arial, Helvetica, sans-serif}
