@@ -1,6 +1,15 @@
-<!-- footer -->
+<!-- *********** Footer *********** -->
 <div class="footer">
-<p>&copy; <a href="/copydisc">Crown Copyright and Disclaimer</a><br />&nbsp;&nbsp;&nbsp;&nbsp;Last updated: <?php echo get_the_modified_date( ); ?></p>
+<a href="mailto:website.enquiries@judiciary.gsi.gov.uk">Feedback</a> | &copy; <a href="http://intranet.justice.gsi.gov.uk/global/copyright.htm">Crown Copyright</a> | <a href="http://intranet.justice.gsi.gov.uk/guidance-support/security/it-security/web-browsing-email/index.htm">Web browsing policy</a>
+<div class="FR">
+Content owner: <a href="mailto:website.enquiries@judiciary.gsi.gov.uk?subject=JO intranet content">Judicial Office Communications Team</a><br />Last updated: <!-- #BeginDate format:En2 -->28-Apr-2015<!-- #EndDate -->.
+</div>
+</div>
+<!-- *********** End of Footer *********** -->
 
 </div>
-</div>
+<!-- *********** End of Wrapper *********** -->
+
+</body>
+</html>
+

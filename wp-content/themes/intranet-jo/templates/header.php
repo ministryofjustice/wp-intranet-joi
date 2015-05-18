@@ -1,73 +1,120 @@
-<a name="top">
-<!-- googleoff: index -->
-<!-- top image bar -->
-<div id="imgbar">
-<a href="/"><img src="/wp-content/uploads/intranet-logoleft.gif" width="270" height="100" border="0" title="Law Commission Intranet" /></a><a href="/"><img src="/wp-content/uploads/intranet-logoright.gif" alt="Law Commission Intranet" width="500" height="100" border="0" /></a></div>
-<!-- Top horizontal navigation area -->
-<div id="shadow">
-<div id="hnav">
- <ul id="hnav2">
- <li id="who"><a tabindex="12" accesskey="p" title="Who's Who" href="/whoswho">Who's Who</a></li>
- <li id="goodidea"><a tabindex="13" accesskey="g" title="Good Ideas" href="/ideas">Good Ideas</a></li>
- <li id="elis"><a tabindex="14" accesskey="e" title="eLis" href="/elis">eLis</a></li>
- <li id="lsite"><a tabindex="15" accesskey="w" title="LawCom Website" href="http://www.lawcom.gov.uk" target="_new">LawCom Website</a></li>
- <li id="dcainfo"><a tabindex="16" accesskey="d" title="Ministry of Justice intranet" href="http://intranet.justice.gsi.gov.uk/" target="_new">MOJ Intranet</a></li>
- <li id="links"><a tabindex="17" accesskey="l" title="Links" href="/links">Links</a></li>
- <li id="sitemap"><a tabindex="18" accesskey="m" title="Site Map" href="/sitemap">Site Map</a></li></ul>
-</div>
-<!-- date puller -->
-<div id="date">
-  <script language="javascript" type="text/javascript">
-<!--
-var now = new Date();
-var dateno = now.getDate();
-var day = now.getDay();
-         if (day == 0) dayname = "Sunday";
-         if (day == 1) dayname = "Monday";
-         if (day == 2) dayname = "Tuesday";
-         if (day == 3) dayname = "Wednesday";
-         if (day == 4) dayname = "Thursday";
-         if (day == 5) dayname = "Friday";
-         if (day == 6) dayname = "Saturday";
-var month = now.getMonth();
-         if (month == 0) monthname = "January";
-         if (month == 1) monthname = "February";
-         if (month == 2) monthname = "March";
-         if (month == 3) monthname = "April";
-         if (month == 4) monthname = "May";
-         if (month == 5) monthname = "June";
-         if (month == 6) monthname = "July";
-         if (month == 7) monthname = "August";
-         if (month == 8) monthname = "September";
-         if (month == 9) monthname = "October";
-         if (month == 10) monthname = "November";
-         if (month == 11) monthname = "December";
-document.write(dayname + "&nbsp;" + dateno + "&nbsp;" + monthname);
-//-->
-</script>
-</div>
-</div>
-<!-- Left hand vertical navigation-->
-<div id="leftnav">
- <ul id="leftnav2">
-  <li id="home-nav"><a tabindex="1" accesskey="1" title="Intranet Home" href="/index">Intranet Home</a></li>
-  <li id="library-nav"><a tabindex="2" accesskey="2" title="Library" href="/library">Library</a></li>
-  <li id="economics-nav"><a tabindex="3" accesskey="n" title="Economics" href="/economics">Economics</a></li>
-  <li id="facilities-nav"><a tabindex="4" accesskey="3" title="Facilities/IT" href="/facilities">Facilities/IT</a></li>
-  <li id="hr-nav"><a tabindex="5" accesskey="4" title="Human Resources" href="/humanres">Human Resources</a></li>
-  <li id="communications-nav"><a tabindex="6" accesskey="c" title="Communications" href="/communications_2010">Communications</a></li>
-  <li id="finance-nav"><a tabindex="7" accesskey="5" title="Finance" href="/finance">Finance</a></li>
-  <li id="projects-nav"><a tabindex="8" accesskey="6" title="Please note: This is a link to the Law Commission website and will open in a new window" href=http://www.lawcom.gov.uk/projects.htm target="_new">A-Z of Projects</a></li>
-  <li id="howto-nav"><a tabindex="9" accesskey="7" title="How To...?" href="/howto">How To...?</a></li>
-  <li id="gowrong-nav"><a tabindex="10" accesskey="8" title="Common problems - How to find help" href="/gowrong">Common Problems - How to Find Help</a></li>
-  <li id="health-nav"><a tabindex="11" accesskey="9" title="Health and safety" href="/health_and_safety">Health and Safety</a></li>  
- </ul>
-</div>
-<!-- main body content-->
-<!-- search box -->
-<div id="content">
-<div class="rightdiv">
-     <?php get_search_form(); ?>
-</div>
-<!-- googleon: index -->
-<br />
+ <div id="wrapper">
+ <!-- Top -->
+     <div class="row">    
+      <!-- Header -->
+      <div class="column grid_15" id="header">
+        <div class="row">         
+          <!-- Logo -->
+          <div class="column grid_9"><a href="index.htm"><img src="images/logo/new-intranet-logo-sm.png" border="0" alt="Judicial Office Intranet" /></a></div>
+          <!-- Logo end -->            
+          <!-- Search -->
+          <div class="column grid_4" id="search">
+            <div class="search-top" id="int">
+              <form action="http://intranet.justice.gsi.gov.uk/searchJudicial.do" method="get" name="query" id="query">
+                <label for="search" class="hidden-text">Search:</label>
+                <input id="search" name="query" class="searchbox" size="30" type="text">
+                <input id="submit" value="Go" class="searchbutton" title="Search" type="submit">
+                Search:
+                <input name="searchtype" id="intranet" value="intranet" checked="checked" type="radio">
+                <label for="intranet">intranet</label>
+                <input name="searchtype" id="people" value="peoplefinder" type="radio">
+                <label for="people">peopleFinder</label>
+              </form>
+            </div>
+            <div class="search-people" id="pf">
+              <form action="http://intranet-applications.dca.gsi.gov.uk/peopleFinder/UserSearch2.do" method="get" name="searchform" id="searchform">
+                <label for="forename" class="hidden-text">Forename</label>
+                <input id="forename" name="forename" type="text" class="searchbox" size="12" value="First name" onclick="this.value = '';" />
+                <label for="surname" class="hidden-text">Surname</label>
+                <input id="surname" name="surname" type="text" class="searchbox" size="13" value="Last name" onclick="this.value = '';" />
+           <input type="submit" class="searchbutton" id="submit1" title="Search" value="Go" />
+                Search:
+                <input name="searchtype1" type="radio" id="intranet1" value="intranet" />
+                <label for="intranet1">intranet</label>
+                <input name="searchtype1" type="radio" id="people1" value="peoplefinder" checked="checked" />
+                <label for="people1">peopleFinder</label>
+              </form>
+            </div>
+          </div>
+          <!-- Search end --> 
+        </div>
+      </div>
+      <!-- Header end --> 
+      
+      <!-- Top navigation -->
+
+      <!-- Top navigation end --> 
+    </div>
+    <!-- Top end --> 
+    
+    <!-- Main -->
+ <div class="column grid_15" id="navigation">
+<div id="cssmenu">
+<ul>
+<li><a href="../joew/index.htm">Home</a></li>
+<li><a href="../joew/contacts/index.htm">Contacts</a>
+<ul>
+<li><a href="../joew/contacts/ceo.htm">Chief Executive's Office</a></li>
+<li><a href="../joew/contacts/hr-judiciary/index.htm">HR Judiciary</a></li>
+<li><a href="../joew/contacts/jc/index.htm">Judicial College</a></li>
+<li><a href="../joew/contacts/jcio/index.htm">Judicial Conduct Investigations Office</a></li>
+<li><a href="../joew/contacts/private-offices/index.htm">Judicial Private Offices</a></li>
+<li><a href="../joew/contacts/cccs/index.htm">Communications</a></li>
+<li><a href="../joew/contacts/bus-support.htm">Business Support</a></li>
+<li><a href="../joew/contacts/jud-international-team.htm">International Team</a></li>
+<li><a href="../joew/contacts/reg-sec/index.htm">Regional Secretariats</a> </li>
+<li><a href="../joew/contacts/guide.htm">Key contacts</a></li>
+<li><a href="../joew/about-us/structure/organograms/index.htm">Organisation charts</a></li>
+</ul>
+</li>   
+<li><a href="../joew/about-us/index.htm">About us</a>
+  <ul>
+<li><a href="../joew/about-us/structure/index.htm">Structure</a></li>
+<li><a href="../joew/about-us/jillians-blog/index.htm">Jillian's blog</a></li>
+<li><a href="../joew/about-us/options-for-change/index.htm">Options for Change</a></li>
+<li><a href="../joew/about-us/business-plan/index.htm">Business Plan</a></li>
+<li><a href="../joew/about-us/leadership/index.htm">Leadership framework</a></li>
+<li><a href="../joew/about-us/statement-exp/index.htm">Statement of expectations</a></li>
+<li><a href="../joew/about-us/management_boards/index.htm">Management Board</a></li>
+<li><a href="../joew/about-us/ses/index.htm">Staff Engagement</a></li> 
+<li><a href="../joew/about-us/icg/index.htm">Internal Communications Group</a></li>
+<li><a href="../joew/about-us/jo-story/index.htm">JO Story</a></li>
+<li><a href="../joew/about-us/60seconds/index.htm">60 seconds with...</a></li>
+      </ul>
+    </li>
+          <li><a href="../joew/working_in/index.htm">Working in JO</a>     
+          <ul>
+        <li><a href="../joew/working_in/ci/index.htm">Continuous Improvement (CI)</a></li> 
+<li><a href="../joew/working_in/eoi.htm">Expressions of interest</a></li> 
+  <li><a href="../joew/working_in/facilities.htm">Facilities</a></li>
+    <li><a href="../joew/working_in/finance.htm">Finance</a></li>
+        <li><a href="../joew/working_in/flexi-working-proj-management/index.htm">Flexible Assignment Working & Project Management</a></li>
+    <li><a href="../joew/working_in/forms.htm">Forms</a></li>
+     <li><a href="../joew/working_in/hs.htm">H & S</a></li>
+          <li><a href="../joew/working_in/hr.htm">HR</a></li>
+           <li><a href="../joew/working_in/jo-induction.htm">Induction</a></li>
+           <li><a href="../joew/working_in/information-assurance.htm">Information Assurance</a></li>
+<li><a href="../joew/working_in/it-housekeeping.htm">IT</a></li>
+     <li><a href="working_in/l-and-d/l-d.htm">Learning and development</a></li>
+     <li><a href="../joew/working_in/reference.htm">Reference</a></li>
+ <li><a href="../joew/working_in/skills-exp/index.htm">Skills register</a></li>
+     <li><a href="../joew/working_in/travel.htm">Travel</a></li>
+          </ul>
+        </li>
+          <li><a href="../joew/working_with/index.htm">Working with the judiciary</a>
+          <ul>
+        <li><a href="../joew/working_with/comms.htm">Communicating with the judiciary</a></li>
+<li><a href="../joew/working_with/letters.htm">Drafting  letters for the senior judiciary</a></li>
+<li><a href="../joew/working_with/sub-memo.htm">Submissions and memos</a></li>
+<li><a href="../joew/working_with/arrangements.htm">Arrangements when out of the office</a></li>
+<li><a href="../joew/working_with/jud-gov/jud-gov-homepage.htm">Judicial Governance</a></li>
+<li><a href="../joew/working_with/standardised-briefings.htm">Standardised Briefings and Itineraries</a></li>
+<li><a href="../joew/working_with/guidance_researchers.htm">Guidance for researchers</a></li>
+</ul>
+</li>
+<li><a href="../joew/calendar/index.htm">Events calendar</a></li>
+<li><a href="../joew/judicial_database/index.htm">Judicial database</a></li>
+<li><a href="../joew/links.htm">Useful links</a></li>
+</ul> 
+</div>   
+</div> 

@@ -4,27 +4,41 @@ namespace Roots\Sage\Assets;
 
 function assets() {
   global $wp_styles;
-  wp_enqueue_style('global2', trailingslashit(get_template_directory_uri()) . "global2.css", false, null);
-  wp_enqueue_style('global', trailingslashit(get_template_directory_uri()) . "global.css", false, null);
-  $wp_styles->add_data( 'global', 'conditional', 'lt IE 6' );  
+  if ( is_page(5)) {
+  wp_enqueue_style('styles-home', trailingslashit(get_template_directory_uri()) . "styles-home.css", false, null);
+} else {
+  wp_enqueue_style('grid', trailingslashit(get_template_directory_uri()) . "grid.css", false, null);
+  wp_enqueue_style('added', trailingslashit(get_template_directory_uri()) . "added.css", false, null);
+  wp_enqueue_style('print', trailingslashit(get_template_directory_uri()) . "print.css", false, null);
+
+}
+ 
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
 function add_head() {
-  echo '<!--[if IE 6]> 
-<style>
-body
-{background: #fff url(docs/infobg-ie.gif) repeat-y}
-</style>
-<![endif]-->
-<link href="/wp-content/themes/intranet-lawcom/print.css" rel="stylesheet" type="text/css" media="print" />
+  echo '<!-- Styles -->
 
-<script language="JavaScript">
-<!--
-function openWin(URL) {
-aWindow=window.open(URL, "thewindow", "toolbar=no, width=600, height=500, status=no, scrollbars=yes, resize=no, menubar=no");
-}
-//-->
-</script>' . "\n";
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="ie7.css">
+<![endif]-->
+<!-- Styles end -->
+<!-- Scripts -->
+<script type="text/javascript" src="scripts/jquery-1.4.js"></script>
+<script type="text/javascript" src="scripts/searchbox.js"></script>
+<script type="text/javascript" src="scripts/easySlider1-7.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){   
+            $("#slider").easySlider({
+                auto: true,
+                continuous: true,
+                nextId: "slider1next",
+                prevId: "slider1prev"
+            });
+            $("#slider2").easySlider({ 
+                numeric: true
+            });
+        }); 
+    </script>' . "\n";
 }
 add_action( 'wp_head', __NAMESPACE__ . '\\add_head' );
