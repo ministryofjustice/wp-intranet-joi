@@ -6,15 +6,15 @@ if (is_page(5)) { ?>
 <div id="content">
 <div id="slider2">		
 <ul>
-<li><img src="wp-content/uploads/homepage/bus-plan-15-16-border.jpg" alt="Business Plan 2015-16" border="0" class="FR" />
+<li><img src="wp-content/uploads/bus-plan-15-16-border.jpg" alt="Business Plan 2015-16" border="0" class="FR" />
 <h2><a href="about-us/business-plan/index.htm">JO Business Plan 2015-16</a></h2>
 <p class="date">Today Jillian launches the JO business plan for the year ahead. Read Jillian's introduction, view the plan and find out more about some of our successes in 2014-15.</p>
 </li>
-<li><img src="wp-content/uploads/homepage/lcj-usher-press-association-homepage.jpg" alt="Usher" border="0" class="FR" />
+<li><img src="wp-content/uploads/lcj-usher-press-association-homepage.jpg" alt="Usher" border="0" class="FR" />
 <h2><a href="news/2015/lcj-court-usher-tribute.htm">Judges Bid Farewell to Top Usher</a><a href="news/2015/end-of-year-performance.htm"></a></h2>
 <p><span class="date">The Lord Chief Justice was joined by three former chief justices and other top judges in a unique tribute   to court usher Jean Fairs.</span></p>
 </li>
-  <li><img src="wp-content/uploads/homepage/performance.jpg" alt="Performance" border="0" class="FR" />
+  <li><img src="wp-content/uploads/performance.jpg" alt="Performance" border="0" class="FR" />
   <h2><a href="news/2015/end-of-year-performance.htm">End of Year Performance Management</a></h2>
   <p><span class="date">Keep informed of key dates and read documents filled with help on the process and how to prepare for end of year discussions.</span></p>
   </li>
@@ -63,11 +63,11 @@ if (is_page(5)) { ?>
 <!-- *********** 4 Pictures Area *********** -->
 <br clear="all" />
 <div class="divL4">
-<div class="box2"><a href="working_in/reward-recognition.htm"><img src="wp-content/uploads/homepage/r-and-r.png"  alt="Picture of whiteboard with Reward & recognition on it and links to skills register"border="0"/></a></div> 
-<div class="box1"><a href="about-us/60seconds/index.htm"><img src="wp-content/uploads/homepage/60seconds.png" border="0"/></a></div>
+<div class="box2"><a href="working_in/reward-recognition.htm"><img src="wp-content/uploads/r-and-r.png"  alt="Picture of whiteboard with Reward & recognition on it and links to skills register"border="0"/></a></div> 
+<div class="box1"><a href="about-us/60seconds/index.htm"><img src="wp-content/uploads/60seconds.png" border="0"/></a></div>
 <br clear="all" />
-<div class="box2"><a href="about-us\jillians-blog\index.htm"><img src="wp-content/uploads/homepage/jillians-blog-sm.png" width="250" alt="picture of Jillian Kay" border="0" /></a></div>  
-<div class="box1"><a href="working_in/skills-exp/index.htm"><img src="wp-content/uploads/homepage/learning-skills-register.png" alt="Picture of blackboard with Learning skills register on it and links to skills register" border="0" /></a></div>
+<div class="box2"><a href="about-us\jillians-blog\index.htm"><img src="wp-content/uploads/jillians-blog-sm.png" width="250" alt="picture of Jillian Kay" border="0" /></a></div>  
+<div class="box1"><a href="working_in/skills-exp/index.htm"><img src="wp-content/uploads/learning-skills-register.png" alt="Picture of blackboard with Learning skills register on it and links to skills register" border="0" /></a></div>
 </div>
 <!-- *********** End of 4 Pictures Area *********** -->
 </div>
@@ -123,7 +123,7 @@ for suppliers to send invoices to.
 <p class="date" sizcache013395280703002998="5" sizset="20">10 April 2015</p>
 <p sizcache013395280703002998="5" sizset="20">Spaces are available for the latest series of seminars. In this session District Judge  Arbuthnot will be talking about  her role.</p>
 <h2 sizcache013395280703002998="5" sizset="20">&nbsp;</h2>
-<h2><a href="archived-news.htm"><img src="wp-content/uploads/homepage/news-archive.png" width="180" height="30" border="0" alt="News archive image" /></a></h2>
+<h2><a href="archived-news.htm"><img src="wp-content/uploads/news-archive.png" width="180" height="30" border="0" alt="News archive image" /></a></h2>
 </div>
 <!-- ***********  End of News Area *********** -->
 
