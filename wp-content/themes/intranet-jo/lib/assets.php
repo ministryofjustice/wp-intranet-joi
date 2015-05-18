@@ -10,10 +10,12 @@ function assets() {
   wp_enqueue_style('grid', trailingslashit(get_template_directory_uri()) . "grid.css", false, null);
   wp_enqueue_style('added', trailingslashit(get_template_directory_uri()) . "added.css", false, null);
   wp_enqueue_style('print', trailingslashit(get_template_directory_uri()) . "print.css", false, null);
+}
+ wp_enqueue_script( 'jquery-1.4', get_template_directory_uri() . '/scripts/jquery-1.4.js', false, null );
+ wp_enqueue_script( 'easySlider1-7', get_template_directory_uri() . '/scripts/easySlider1-7.js', false, null );
+ wp_enqueue_script( 'searchbox', get_template_directory_uri() . '/scripts/searchbox.js', false, null );
+}
 
-}
- 
-}
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
 function add_head() {
@@ -24,9 +26,6 @@ function add_head() {
 <![endif]-->
 <!-- Styles end -->
 <!-- Scripts -->
-<script type="text/javascript" src="scripts/jquery-1.4.js"></script>
-<script type="text/javascript" src="scripts/searchbox.js"></script>
-<script type="text/javascript" src="scripts/easySlider1-7.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){   
             $("#slider").easySlider({
