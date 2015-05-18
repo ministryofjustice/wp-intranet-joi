@@ -384,7 +384,7 @@ body: before {
 .row {
 	width: 990px; 
 	margin: 0 auto;
-	overflow: hidden;
+/*	overflow: hidden;*/
 	z-index: 1;
 	height: 70px;
 }
