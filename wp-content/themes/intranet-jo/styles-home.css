@@ -1,7 +1,7 @@
 /* Reset.css */
  html, body,  div,  span,  object,  iframe,  h1,  h2,  h3,  h4,  h5,  h6,  p,  blockquote,  pre,  a,  abbr,  acronym,  address,  code,  del,  dfn,  em,  q,  dl,  dt,  dd,  ol,  ul,  li,  fieldset,  form,  label,  legend,  caption,  tbody,  tfoot,  thead {margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-family: Calibri, Arial, Helvetica, sans-serif; vertical-align: baseline;}
 
-body { width: 990px; margin: 20px auto; position: !important; font-family: Calibri, Arial, Helvetica, sans-serif; font-size: 1em; }
+body { width: 1040px; margin: 0px auto; position: !important; font-family: Calibri, Arial, Helvetica, sans-serif; font-size: 1em; }
 
 a { color: #006d81; text-decoration: underline; }
 a:hover { color: #006d81; text-decoration: none; }
@@ -51,10 +51,16 @@ color:  #006d81;
 /*********************
 End of Headings
 *********************/
+
+img
+{
+margin: 0 0 10px 0;
+}
+
 /*********************
 Wrapper
 *********************/
-#wrapper { width: 990px; background-color: #FFF; height: auto; padding: 5px 0; margin: 10px auto; }
+#wrapper { width: 1040px; background-color: #FFF; height: auto; padding: 0px 0; margin: 0px auto; }
 /*********************
 End of Wrapper
 *********************/
@@ -224,7 +230,7 @@ Easy Slider / Carousel
 		position:relative;
 		width:30px;
 		height:77px;
-		background:url(../images/homepage/btn_previous.png)
+		background:url(../../uploads/btn_previous.png)
 		}	
 		
 	#nextBtn a, #slider1next a{ background:url(../images/homepage/btn_next.png)
@@ -274,7 +280,22 @@ End of Easy Slider / Carousel
             text-indent:-8000px;
             }
     /* // image replacement */
-			
+
+#navigation
+  {
+  width: 98%; 
+  /*height: 27px;*/
+  background: #006d81 /* url(../../uploads/left-nav-border-g.gif) no-repeat 6px 0*/;
+  margin: 0;
+  padding: 0 0 0 12px;
+  }
+
+#header
+{
+margin: 26px 0 0 0;
+padding: 0 5px;
+}
+
 /*******************
 Search 
 *******************/
@@ -285,6 +306,7 @@ Search
 	color:  #fff;
 	font-size: 75%;
 	float: right;
+  margin-right:;
 	}
 	
 	#search .searchbox
@@ -358,39 +380,38 @@ body: before {
 /* ================ */
 
 .grid_1 { width: 60px; }
-.grid_2 { }
-.grid_3 { width: 200px; }
+.grid_2 { /*width: 130px;*/ }
+.grid_3 { width:200px; }
 .grid_4 { width:250px; }
 .grid_5 { width:340px; }
 .grid_6 { width:410px; }
 .grid_7 { width:480px; }
 .grid_8 { width:550px; }
-.grid_9 { width: 590px; }
+.grid_9 { width:600px; }
 .grid_10 { width:690px; }
 .grid_11 { width:760px; }
 .grid_12 { width:765px; }
 .grid_13 { width:900px; }
 .grid_14 { width:970px; }
-.grid_15 { width:990px; }
+.grid_15 { width:1040px; }
 .grid_16 { width:1110px; }
 
 
 .column {
-	margin: 0 5px;
-	overflow: hidden;
-	float: left;
-	display: inline;
+  margin: 0 5px;
+  overflow: hidden;
+  float: left;
+  display: inline;
 }
 .row {
-	width: 990px; 
-	margin: 0 auto;
-/*	overflow: hidden;*/
-	z-index: 1;
-	height: 70px;
+  width: 1040px; 
+  margin: 0 auto;
+  overflow: hidden;
 }
 .row .row {
-	margin: 0 -5px;
-	display: inline-block;
+  margin: 0 -5px;
+  width: 1040px;
+  display: inline-block;
 }
 /* Hide text */
 .hidden-text
