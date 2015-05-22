@@ -45,7 +45,7 @@ End of Twitter
 Footer
 *************************************/
 .footer {
-	width: 990px;
+	width: 1040px;
 	height: 65px;
 	color: #FFF;
 	margin: 20px auto;
@@ -972,6 +972,46 @@ cssmenu Nav
 }
 #cssmenu ul ul li.has-sub:hover > a::after {
   border-color: #ffffff;
+}
+
+.alert {
+	margin: 24px 0 24px 12px;
+}
+
+.alert ul {
+	margin-left: 24px;
+}
+
+.inline-search {
+	width: 50%;
+	margin: 0 0 0 12px;
+}
+
+label {
+	display: none;
+}
+
+.inline-search input {
+	font-size: 15px;
+	padding: 8px;
+	line-height: 16px;
+	-webkit-appearance:none;
+}
+
+.inline-search input[type=search]{
+	width: 80%;
+	border: 1px solid #ccc;
+
+}
+
+.inline-search input[type=submit]{
+	background: #006d81;
+	border: 1px solid #006d81;
+	color: #fff;
+}
+
+.entry-summary {
+	margin-bottom: 24px;
 }
 
 
