@@ -143,24 +143,19 @@ for suppliers to send invoices to.
 <?php } else { ?>
 <div class="row" id="main">
 	<div class="column grid_3">
+
+
 <ul id="left-nav">
-<li><a href="index.htm" class="current">Contacts</a></li>
+<li><?php echo '<a class="current" href="'.get_permalink($post->post_parent).'">'.get_the_title($post->post_parent).'</a>'; ?></li>
+
 <!-- Subnav, use this for any sub navigation on the left hand column, copy and paste under any li you want a sub nav for. Place class="current" in the current sub nav a -->
- <ul id="sub-nav">
-<li><a href="ceo.htm" class="activeSubA">Chief Executive's Office</a></li>
-<li><a href="hr-judiciary/index.htm" class="activeSubK">HR Judiciary</a></li>
-<li><a href="jc/index.htm">Judicial College</a></li>
-<li><a href="jcio/index.htm" class="activeN">Judicial Conduct Investigations Office</a></li>
-<li><a href="private-offices/index.htm">Judicial Private Offices</a></li>
-<li><a href="cccs/index.htm">Communications</a></li>
-<li><a href="bus-support.htm" class="activeP">Business Support</a></li>
-<li><a href="jud-international-team.htm" class="activeO">International Team</a></li>
-<li><a href="reg-sec/index.htm">Regional Secretariats</a> </li>
-<li><a href="guide.htm" class="activeSubJ">Key contacts</a></li>
-<li><a href="../about-us/structure/organograms/index.htm" class="activeSubM">Organisation charts</a></li>
+ 
+	<?php echo wpb_list_child_pages(); ?>
+	<ul>
+
 </ul>
 
-        </ul>
+</ul>
       </div>
    <div class="column grid_12" id="mid">
  <?php the_content(); ?>

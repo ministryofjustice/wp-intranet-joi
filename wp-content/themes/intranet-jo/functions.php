@@ -27,3 +27,26 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+/* Display child pages on parent page  */
+
+function wpb_list_child_pages() { 
+  global $post; 
+
+  if ( is_page() && $post->post_parent ) {
+    $parent = get_post($post->post_parent);
+    if ($parent->post_parent) {
+      $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $parent->post_parent . '&echo=0' );
+    } else {
+      $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+    }
+  } else {
+    $childpages = wp_list_pages( 'sort_column=menu_order&depth=1&title_li=&child_of=' . $post->ID . '&echo=0' );
+  }
+
+  if ( $childpages ) {
+    $string = '<ul id="sub-nav">' . $childpages . '</ul>';
+  }
+
+  return $string;
+}
