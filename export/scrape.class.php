@@ -123,6 +123,7 @@ class ScrapeSite
               "post_date" => $this->postDate($crawler),
               "post_parent" => $this->postParent($url),
               "post_type" => $post_type,
+              "url" => $url
             ];
           }
 
@@ -158,6 +159,19 @@ class ScrapeSite
     $crawler->filter('.column.grid_12, .column.grid_9')->each(function ($node, $i) use (&$post_content) {
       $post_content = $node->html();
       $post_content = preg_replace("/<!--.*-->/", "", $post_content);
+      $post_content = preg_replace_callback(
+        "#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|mailto|javascript|\#)([^\"'>]+)([\"'>]+)#",
+        function($matches) {
+          $matches[2] = str_replace(".htm", "", $matches[2]);
+          $matches[2] = str_replace("docs/", "wp-content/uploads/", $matches[2]);
+          if(is_numeric($matches[2])) {
+            $matches[2] .= "-2";
+          }
+          return $matches[1] . '/' . $matches[2] . $matches[3];
+        },
+        $post_content
+      );
+      // Update internal links
     });
     return $post_content;
   }
@@ -187,7 +201,7 @@ class ScrapeSite
          end($directories) == "l-d.htm" ||
          end($directories) == "jud-gov-homepage.htm" ||
          end($directories) == "bite-size-learning.htm" ||
-         end($directories) == "l-d-project-team.htm") { 
+         end($directories) == "l-d-project-team.htm") {
         unset($directories[count($directories)-1]);
         unset($directories[count($directories)-1]);
         $slug = implode("/", $directories);
@@ -210,13 +224,17 @@ class ScrapeSite
     $file_name = str_replace(".htm", "", end($directories));
     $up_level = $directories[count($directories)-2];
 
-    if(empty(end($directories))) {
-      return "index";
-    } elseif($file_name == "index" || $file_name == "l-d" || $file_name == "jud-gov-homepage" || $file_name = "l-d-project-team") {
-      return $up_level;
+    if(strpos($path, "/joew/index.htm")) {
+      $post_name = "index";
+    } elseif($file_name == "index" || $file_name == "l-d" || $file_name == "jud-gov-homepage" || $file_name == "l-d-project-team") {
+      $post_name = $up_level;
     } else {
-      return $file_name;
+      $post_name = $file_name;
     }
+    if(is_numeric($matches[2])) {
+      $matches[2] .= "-2";
+    }
+    return $post_name;
   }
 
   /**
