@@ -109,6 +109,8 @@ export/vendor
 export/dump
 export/temp
 export/export.json
+export/internal_html.csv
+wp-content/plugins/bulk-delete
 wp-content/plugins/wordpress-importer/parsers.php
 wp-content/plugins/wordpress-importer/readme.txt
 wp-content/plugins/wordpress-importer/wordpress-importer.php
