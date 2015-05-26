@@ -5,7 +5,7 @@ namespace Roots\Sage\Assets;
 function assets() {
   global $wp_styles;
 
-  if ( is_page(5)) {
+  if ( is_page('home')) {
   wp_enqueue_style('styles-home', trailingslashit(get_template_directory_uri()) . "styles-home.css", false, null);
 } else {
   wp_enqueue_style('added', trailingslashit(get_template_directory_uri()) . "added.css", false, null);
