@@ -1,6 +1,6 @@
 <?php 
 
-if (is_page(5)) { ?>
+if (is_page('home')) { ?>
 
 <!-- ***********  Carousel/Slider *********** -->
 <div id="content">
