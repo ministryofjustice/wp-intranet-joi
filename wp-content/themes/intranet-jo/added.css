@@ -987,7 +987,7 @@ cssmenu Nav
 	margin: 0 0 0 12px;
 }
 
-label {
+.inline-search label {
 	display: none;
 }
 
