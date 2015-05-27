@@ -70,7 +70,8 @@ remove_filter( 'the_excerpt', 'wpautop' );
 // READ THIS: https://github.com/jjgrainger/wp-custom-post-type-class/blob/master/README.md
 $events = new CPT\CPT('event', array(
   'menu_icon'   => 'dashicons-calendar-alt',
-  'supports' => false
+  'supports' => false,
+  'has_archive' => true
 ));
 
 $events->columns(array(
@@ -89,12 +90,53 @@ $events->sortable(array(
 ));
 
 /**
+ * Add custom querys for events
+ */
+function add_custom_query_var( $vars ){
+  $vars[] = "event_year";
+  $vars[] = "event_month";
+  return $vars;
+}
+add_filter( 'query_vars', __NAMESPACE__ . '\\add_custom_query_var' );
+
+/**
+ * Add custom rewrite rules
+ */
+function custom_rewrite() {
+  add_rewrite_rule('^event/([0-9]+)/([0-9]+)/?', 'index.php?post_type=event&event_year=$matches[1]&event_month=$matches[2]', 'top');
+}
+add_action('init', __NAMESPACE__ . '\\custom_rewrite');
+
+/**
+ * Query for Events archive
+ */
+function event_query() {
+  if(!is_numeric(get_query_var('event_year')) || !is_numeric(get_query_var('event_month'))) {
+    return;
+  }
+
+  $args = array(
+    'post_type' => 'event',
+    'date_query' => array(
+      array(
+        'year'  => get_query_var('event_year'),
+        'month' => get_query_var('event_month'),
+      ),
+    ),
+    'post_per_page' => -1
+  );
+  $query = new \WP_Query($args);
+  return $query;
+}
+
+/**
  * Update events title to content for acf title field
  */
 function update_events_title( $post_id ) {
   $current_post = get_post($post_id);
   $post['ID'] = $post_id;
   $post['post_title'] = substr(strip_tags(get_field('title'), $post_id), 0, 100);
+  $post['post_name'] = sanitize_title(substr(strip_tags(get_field('title'), $post_id), 0, 100));
   update_field('field_55659a7b0cbc1', strip_tags(get_field('field_55659a7b0cbc1', $post_id), "<a>"), $post_id);
   wp_update_post( $post );
 }
