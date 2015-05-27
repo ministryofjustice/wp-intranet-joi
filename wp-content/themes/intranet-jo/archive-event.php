@@ -12,6 +12,10 @@
 <?php endif; ?>
 
 <?php while ($query->have_posts()) : $query->the_post(); ?>
+  <?php $postdate = get_field('date'); ?>
+  <?php if ( $postdate != $dategroup ): $dategroup = $postdate;?>
+    <h3><?= $postdate ?></h3>
+  <?php endif; ?>
   <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 <?php endwhile; ?>
 
