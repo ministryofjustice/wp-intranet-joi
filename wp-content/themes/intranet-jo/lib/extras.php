@@ -56,3 +56,12 @@ add_action( 'admin_init', __NAMESPACE__ . '\\remove_dashboard_meta' );
 
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
+
+function get_ID_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}
