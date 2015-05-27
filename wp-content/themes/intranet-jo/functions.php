@@ -16,6 +16,8 @@ $sage_includes = array(
   'lib/config.php',                // Configuration
   'lib/assets.php',                // Scripts and stylesheets
   'lib/titles.php',                // Page titles
+  'lib/cpt.php',
+  'lib/custom_fields.php',
   'lib/extras.php',                // Custom functions
 );
 
@@ -30,8 +32,8 @@ unset($file, $filepath);
 
 /* Display child pages on parent page  */
 
-function wpb_list_child_pages() { 
-  global $post; 
+function wpb_list_child_pages() {
+  global $post;
 
   if ( is_page() && $post->post_parent ) {
     $parent = get_post($post->post_parent);

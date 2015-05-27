@@ -26,16 +26,22 @@ class ScrapeSite
    * @var string
    */
   protected $json;
+  /**
+   * Should we import the JSON?
+   * @var boolean
+   */
+  protected $import;
 
   /**
    * Constructor
    * @param string    $csv
    * @param string    $json
    */
-  public function __construct($csv, $json)
+  public function __construct($csv, $json, $import)
   {
     $this->csv = $csv;
     $this->json = $json;
+    $this->import = $import;
     $this->scrape($this->loadUrls());
     $this->import();
   }
@@ -116,15 +122,22 @@ class ScrapeSite
 
           $post_type = $this->postType($url);
           if($post_type == "page") {
+            $parent = $this->postParent($url);
             $scrape = [
-              "post_title" => $this->postTitle($crawler),
+              "post_title" => $this->postTitle($crawler, $parent),
               "post_content" => $this->postContent($crawler),
               "post_name" => $this->postName($url),
               "post_date" => $this->postDate($crawler),
-              "post_parent" => $this->postParent($url),
+              "post_parent" => $parent,
               "post_type" => $post_type,
               "url" => $url
             ];
+          } elseif($post_type == "archives-news") {
+
+          } elseif($post_type == "news") {
+
+          } elseif($post_type == "events") {
+
           }
 
           if(!empty($scrape)) {
@@ -143,10 +156,15 @@ class ScrapeSite
   /**
    * Scrape the post title
    */
-  protected function postTitle($crawler)
+  protected function postTitle($crawler, $parent)
   {
-    $crawler->filter('.column.grid_12 h1, .column.grid_9 h1, .column.grid_12 h2, .column.grid_9 h2')->each(function ($node, $i) use (&$post_title) {
-      $post_title = $node->text();
+    $crawler->filter('#mid h1, #wide h1, #mid h2, #wide h2, #mid h3, #wide h3')->each(function ($node, $i) use (&$post_title) {
+      preg_match("/<!-- InstanceBeginEditable name=\"(titleofpage|page-header|main-header|pagetitle)\" -->/", $node->html(), $matches);
+      if(!empty($matches) && !empty($node->text())) {
+        $post_title = $node->text();
+      } elseif($node->text() == "60 seconds with...") {
+        $post_title = "60 seconds with...";
+      }
     });
     return $post_title;
   }
@@ -156,8 +174,17 @@ class ScrapeSite
    */
   protected function postContent($crawler)
   {
-    $crawler->filter('.column.grid_12, .column.grid_9')->each(function ($node, $i) use (&$post_content) {
+    $crawler->filter('#mid, #wide')->each(function ($node, $i) use (&$post_content) {
       $post_content = $node->html();
+
+      $start = '<!-- InstanceBeginEditable name="content" -->';
+      $end = '<!-- InstanceEndEditable -->';
+
+      $post_content = stristr($post_content, $start);
+      $dapost_contentta = substr($post_content, strlen($start));
+      $stop = stripos($post_content, $end);
+      $post_content = substr($post_content, 0, $stop);
+
       $post_content = preg_replace("/<!--.*-->/", "", $post_content);
       $post_content = preg_replace_callback(
         "#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|mailto|javascript|\#)([^\"'>]+)([\"'>]+)#",
@@ -171,7 +198,6 @@ class ScrapeSite
         },
         $post_content
       );
-      // Update internal links
     });
     return $post_content;
   }
@@ -183,6 +209,10 @@ class ScrapeSite
   {
     if(strpos($url, '/news/')) {
       return "post";
+    } elseif(strpos($url, 'archive-news')) {
+      return "archive";
+    } elseif(strpos($url, 'calendar')) {
+      return "events";
     } else {
       return "page";
     }
@@ -270,7 +300,9 @@ class ScrapeSite
         'post_status' => 'publish',
         'post_parent' => $this->getID($page->post_parent),
       );
-      wp_insert_post( $post, $error );
+      if($this->import == true) {
+        wp_insert_post( $post, $error );
+      }
 
       if(!empty($error)) {
         die("There was an error importing the posts.");
@@ -292,4 +324,4 @@ class ScrapeSite
   }
 }
 
-$export = new ScrapeSite("internal_html.csv", "export.json");
+$export = new ScrapeSite("internal_html.csv", "export.json", true);
