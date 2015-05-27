@@ -160,3 +160,13 @@ function toolbars( $toolbars )
   return $toolbars;
 }
 add_filter( 'acf/fields/wysiwyg/toolbars' , __NAMESPACE__ . '\\toolbars'  );
+
+function get_ID_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}
+
