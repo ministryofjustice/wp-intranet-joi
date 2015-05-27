@@ -111,16 +111,23 @@ add_action('init', __NAMESPACE__ . '\\custom_rewrite');
  * Query for Events archive
  */
 function event_query() {
-  if(!is_numeric(get_query_var('event_year')) || !is_numeric(get_query_var('event_month'))) {
-    return;
+  $event_year = get_query_var('event_year');
+  if(empty($event_year)) {
+    $event_year = date('Y');
+  }
+
+  $event_month = get_query_var('event_month');
+  if(empty($event_month)) {
+    $event_month = date('m');
   }
 
   $args = array(
     'post_type' => 'event',
-    'date_query' => array(
+    'meta_query' => array(
       array(
-        'year'  => get_query_var('event_year'),
-        'month' => get_query_var('event_month'),
+        'key'     => 'date',
+        'value'   => $event_year . $event_month,
+        'compare' => 'LIKE',
       ),
     ),
     'post_per_page' => -1
