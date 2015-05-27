@@ -1,1 +1,1 @@
-<?php get_field('title'); ?>
+<?= get_field('title') ?>

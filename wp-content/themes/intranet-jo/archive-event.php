@@ -12,9 +12,9 @@
 <?php endif; ?>
 
 <?php while ($query->have_posts()) : $query->the_post(); ?>
-  <?php $postdate = get_field('date'); ?>
+  <?php $postdate = get_field('date'); $date = DateTime::createFromFormat('d/m/Y', $postdate); ?>
   <?php if ( $postdate != $dategroup ): $dategroup = $postdate;?>
-    <h3><?= $postdate ?></h3>
+    <h3><?= $date->format('l j'); ?></h3>
   <?php endif; ?>
   <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 <?php endwhile; ?>
