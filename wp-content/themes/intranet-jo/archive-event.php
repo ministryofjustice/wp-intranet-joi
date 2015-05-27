@@ -13,10 +13,16 @@
 
 <?php while ($query->have_posts()) : $query->the_post(); ?>
   <?php $postdate = get_field('date'); $date = DateTime::createFromFormat('d/m/Y', $postdate); ?>
-  <?php if ( $postdate != $dategroup ): $dategroup = $postdate;?>
+  <?php if ( $postdate != $dategroup ): ?>
+    <?php if(!empty($dategroup)): ?></ul><?php endif; ?>
     <h3><?= $date->format('l j'); ?></h3>
-  <?php endif; ?>
+    <ul>
+  <?php $dategroup = $postdate; endif; ?>
   <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 <?php endwhile; ?>
+
+<?php if ($query->have_posts()) : ?>
+  </ul>
+<?php endif; ?>
 
 <?php the_posts_navigation(); ?>
