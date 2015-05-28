@@ -34,7 +34,7 @@ unset($file, $filepath);
 
 function wpb_list_child_pages() {
   global $post;
-
+  $string = "";
   if ( is_page() && $post->post_parent ) {
     $parent = get_post($post->post_parent);
     if ($parent->post_parent) {
