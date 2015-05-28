@@ -39,7 +39,7 @@ function widgets_init() {
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
-  );
+  ));
   register_sidebar(array(
     'name'          => __('Footer', 'sage'),
     'id'            => 'sidebar-footer',
@@ -47,6 +47,6 @@ function widgets_init() {
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
     'after_title'   => '</h3>'
-  );
+  ));
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
