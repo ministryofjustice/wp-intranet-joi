@@ -12,7 +12,10 @@
      <!-- Mid section -->
      <div class="column grid_12" id="mid">
 <h1>Events calendar </h1>
-<h2><? echo date('F Y'); ?></h2>
+<?php 
+$date = DateTime::createFromFormat('!m', get_query_var('event_month'));
+?>
+<h2><?= $date->format('F') . " " . get_query_var('event_year'); ?></h2>
 
 <div class="box">
 
