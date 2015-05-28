@@ -124,7 +124,7 @@
 <!-- <h2><a href="news/2015/marathon.htm">Michael Stewart Runs the Marathon</a></h2>
 <p class="date">28 April 2015</p> -->
 
-<h2><a href="archived-news.htm"><img src="wp-content/uploads/news-archive.png" width="180" height="30" border="0" alt="News archive image" /></a></h2>
+<h2><a href="news-archive"><img src="wp-content/uploads/news-archive.png" width="180" height="30" border="0" alt="News archive image" /></a></h2>
 </div>
 <!-- ***********  End of News Area *********** -->
 

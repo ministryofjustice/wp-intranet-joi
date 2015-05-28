@@ -125,7 +125,7 @@ Four picture section
 
 .divL4 li { width: 47%; display: inline-block; float: left; list-style: none; height: 124px; overflow:hidden; padding: 6px;}
 
-.divL4 li a img { width: 100%;}
+.divL4 li a img { width: 100%; border: 0;}
 
 /*
 .box { width: 250px; padding: 5px; margin: 0; font-size: 14px; color: #000; float: left;}
