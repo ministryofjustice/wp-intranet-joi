@@ -130,7 +130,10 @@ function event_query() {
         'compare' => 'LIKE',
       ),
     ),
-    'post_per_page' => -1
+    'orderby'   => 'meta_value_num',
+    'meta_key'  => 'date',
+    'order'   => 'ASC',
+    'posts_per_page' => -1
   );
   $query = new \WP_Query($args);
   return $query;
@@ -141,11 +144,13 @@ function event_query() {
  */
 function update_events_title( $post_id ) {
   $current_post = get_post($post_id);
-  $post['ID'] = $post_id;
-  $post['post_title'] = substr(strip_tags(get_field('title'), $post_id), 0, 100);
-  $post['post_name'] = sanitize_title(substr(strip_tags(get_field('title'), $post_id), 0, 100));
-  update_field('field_55659a7b0cbc1', strip_tags(get_field('field_55659a7b0cbc1', $post_id), "<a>"), $post_id);
-  wp_update_post( $post );
+  if(get_post_type($post_id) == "event") {
+    $post['ID'] = $post_id;
+    $post['post_title'] = substr(strip_tags(get_field('title'), $post_id), 0, 100);
+    $post['post_name'] = sanitize_title(substr(strip_tags(get_field('title'), $post_id), 0, 100));
+    update_field('field_55659a7b0cbc1', strip_tags(get_field('field_55659a7b0cbc1', $post_id), "<a>"), $post_id);
+    wp_update_post( $post );
+  }
 }
 add_action('acf/save_post', __NAMESPACE__ . '\\update_events_title', 20);
 
