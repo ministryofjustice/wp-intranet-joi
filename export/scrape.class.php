@@ -1,3 +1,10 @@
+<?php header("Content-Type: text/html; charset=UTF-8"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
 <?php
 
 require('vendor/autoload.php');
@@ -129,12 +136,11 @@ class ScrapeSite
               "post_name" => $this->postName($url),
               "post_date" => $this->postDate($crawler),
               "post_parent" => $parent,
-              "post_type" => $post_type,
-              "url" => $url
+              "post_type" => $post_type
             ];
-          } elseif($post_type == "archives-news") {
-
-          } elseif($post_type == "news") {
+          } elseif($post_type == "archive") {
+            //$scrape[] = $this->newsArchive($crawler);
+          } elseif($post_type == "post") {
 
           } elseif($post_type == "events") {
 
@@ -151,6 +157,15 @@ class ScrapeSite
     } catch(Exception $e) {
       die("Fatal Error");
     }
+  }
+
+  /**
+   * Scrape the news archive posts
+   * @param DomCrawler $crawler
+   */
+  protected function newsArchive($crawler)
+  {
+    return $posts;
   }
 
   /**
@@ -184,20 +199,36 @@ class ScrapeSite
       $dapost_contentta = substr($post_content, strlen($start));
       $stop = stripos($post_content, $end);
       $post_content = substr($post_content, 0, $stop);
-
       $post_content = preg_replace("/<!--.*-->/", "", $post_content);
+      $post_content = preg_replace("/http:\/\/intranet.justice.gsi.gov.uk\/joew/", "", $post_content);
+
       $post_content = preg_replace_callback(
         "#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|mailto|javascript|\#)([^\"'>]+)([\"'>]+)#",
         function($matches) {
           $matches[2] = str_replace(".htm", "", $matches[2]);
-          $matches[2] = str_replace("docs/", "wp-content/uploads/", $matches[2]);
+          $matches[2] = preg_replace("/(..\/|\/|)+docs\//", "/wp-content/uploads/", $matches[2]);
+          $matches[2] = preg_replace("/(..\/|\/|)+images\//", "/wp-content/uploads/", $matches[2]);
           if(is_numeric($matches[2])) {
             $matches[2] .= "-2";
           }
-          return $matches[1] . '/' . $matches[2] . $matches[3];
+          return $matches[1] . $matches[2] . $matches[3];
         },
         $post_content
       );
+
+      $post_content = preg_replace_callback(
+        "#(<\s*img\s+[^>]*src\s*=\s*[\"'])(?!http|mailto|javascript|\#)([^\"'>]+)([\"'>]+)#",
+        function($matches) {
+          $matches[2] = preg_replace("/(..\/|\/|)+images\//", "/wp-content/uploads/", $matches[2]);
+          return $matches[1] . $matches[2] . $matches[3];
+        },
+        $post_content
+      );
+
+      $post_content = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $post_content);
+      $post_content = mb_convert_encoding($post_content, 'HTML-ENTITIES', 'iso-8859-1');
+      $post_content = utf8_encode($post_content);
+
     });
     return $post_content;
   }
@@ -209,7 +240,7 @@ class ScrapeSite
   {
     if(strpos($url, '/news/')) {
       return "post";
-    } elseif(strpos($url, 'archive-news')) {
+    } elseif(strpos($url, 'archived-news')) {
       return "archive";
     } elseif(strpos($url, 'calendar')) {
       return "events";
@@ -324,4 +355,7 @@ class ScrapeSite
   }
 }
 
-$export = new ScrapeSite("internal_html.csv", "export.json", true);
+$export = new ScrapeSite("internal_html.csv", "export.json", false);
+?>
+</body>
+</html>
