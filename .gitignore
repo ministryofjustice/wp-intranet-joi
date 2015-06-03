@@ -4,7 +4,7 @@
 # http://ironco.de/bare-minimum-git/
 # ver 20150227
 #
-# This file is tailored for a WordPress project 
+# This file is tailored for a WordPress project
 # using the default directory structure
 #
 # This file specifies intentionally untracked files to ignore
@@ -111,7 +111,7 @@ export/temp
 export/export.json
 export/internal_html.csv
 wp-content/plugins/bulk-delete
-wp-content/plugins/wordpress-importer/parsers.php
-wp-content/plugins/wordpress-importer/readme.txt
-wp-content/plugins/wordpress-importer/wordpress-importer.php
-wp-content/plugins/wordpress-importer/languages/wordpress-importer.pot
+wp-content/plugins/wordpress-importer
+wp-content/plugins/add-from-server
+wp-content/plugins/wp-media-cleaner
+wp-content/plugins/media-file-manager

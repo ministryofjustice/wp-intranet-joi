@@ -6,16 +6,18 @@
 
 <!-- Left nav -->
 <div class="column grid_3">
-<?php wp_nav_menu( array('menu' => 'Events' )); ?>                                            
+<?php wp_nav_menu( array('menu' => 'Events' )); ?>
 </div>
-     <!-- Left nav end -->          
+     <!-- Left nav end -->
      <!-- Mid section -->
      <div class="column grid_12" id="mid">
 <h1>Events calendar </h1>
-<?php 
+<?php
 $date = DateTime::createFromFormat('!m', get_query_var('event_month'));
+if(!empty($date)):
 ?>
 <h2><?= $date->format('F') . " " . get_query_var('event_year'); ?></h2>
+<?php endif; ?>
 
 <div class="box">
 
@@ -41,8 +43,6 @@ $date = DateTime::createFromFormat('!m', get_query_var('event_month'));
 <?php if ($query->have_posts()) : ?>
   </ul>
 <?php endif; ?>
-
-<?php the_posts_navigation(); ?>
 
 </div>
 

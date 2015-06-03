@@ -82,7 +82,8 @@ class ScrapeSite
       }
       $this->saveJson($scrape);
     } else {
-      die("The scrape does not contain any posts/pages...<br>");
+      print "The scrape does not contain any posts/pages...<br>";
+      die();
     }
   }
 
@@ -128,20 +129,32 @@ class ScrapeSite
         if (strpos($content_type, 'text/html') !== false) {
 
           $post_type = $this->postType($url);
+          //$this->checkSidebar($crawler, $url);
           if($post_type == "page") {
             $parent = $this->postParent($url);
             $scrape = [
               "post_title" => $this->postTitle($crawler, $parent),
-              "post_content" => $this->postContent($crawler),
+              "post_content" => $this->postContent($crawler, $post_type),
               "post_name" => $this->postName($url),
-              "post_date" => $this->postDate($crawler),
+              "post_date" => $this->pageDate($crawler),
               "post_parent" => $parent,
               "post_type" => $post_type
             ];
           } elseif($post_type == "archive") {
-            //$scrape[] = $this->newsArchive($crawler);
+            //$this->getExternal($crawler);
+            $this->newsArchive($crawler);
           } elseif($post_type == "post") {
-
+            $date = $this->postDate($crawler);
+            if(empty($date) || $date == null) {
+              $date = $this->pageDate($crawler);
+            }
+            $scrape = [
+              "post_title" => $this->postTitle($crawler, $parent),
+              "post_content" => $this->postContent($crawler, $post_type),
+              "post_name" => $this->postName($url),
+              "post_date" => $date,
+              "post_type" => $post_type,
+            ];
           } elseif($post_type == "events") {
 
           }
@@ -155,8 +168,36 @@ class ScrapeSite
         }
       }
     } catch(Exception $e) {
-      die("Fatal Error");
+      print "Fatal Error";
+      die();
     }
+  }
+
+  /**
+   * Check for sidebar widget
+   * @param DomCrawler $crawler
+   */
+  protected function checkSidebar($crawler, $url)
+  {
+    $crawler->filter('#right')->each(function ($node, $i) use (&$url) {
+      print "Sidebar on: " . $url . "<br>";
+    });
+  }
+
+  /**
+   * Get external news posts
+   * @param DomCrawler $crawler
+   */
+  protected function getExternal($crawler)
+  {
+    $crawler->filter('#wide h2 a')->each(function ($node, $i) {
+      $url = $node->attr('href');
+      preg_match("/http(s|):\/\/.*/ /*", $url, $matches);
+      preg_match("/news\/.*/ /*", $url, $matches2);
+      if(!empty($matches) || empty($matches2)) {
+        print $node->text() . "&nbsp; &nbsp; &nbsp; " . $url . "<br>";
+      }
+    });
   }
 
   /**
@@ -165,7 +206,12 @@ class ScrapeSite
    */
   protected function newsArchive($crawler)
   {
-    return $posts;
+    $crawler->filter('#wide')->each(function ($node, $i) use (&$post_title) {
+      $html = str_replace("<hr />", "<hr>", $node->html());
+      $posts = explode("<hr>", $html);
+      array_shift($posts);
+      var_dump($posts);
+    });
   }
 
   /**
@@ -187,9 +233,9 @@ class ScrapeSite
   /**
    * Scrape the post content
    */
-  protected function postContent($crawler)
+  protected function postContent($crawler, $post_type)
   {
-    $crawler->filter('#mid, #wide')->each(function ($node, $i) use (&$post_content) {
+    $crawler->filter('#mid, #wide')->each(function ($node, $i) use (&$post_content, &$post_type) {
       $post_content = $node->html();
 
       $start = '<!-- InstanceBeginEditable name="content" -->';
@@ -200,7 +246,7 @@ class ScrapeSite
       $stop = stripos($post_content, $end);
       $post_content = substr($post_content, 0, $stop);
       $post_content = preg_replace("/<!--.*-->/", "", $post_content);
-      $post_content = preg_replace("/http:\/\/intranet.justice.gsi.gov.uk\/joew/", "", $post_content);
+      $post_content = preg_replace("/http:\/\/intranet.justice.gsi.gov.uk\/joew/", "/", $post_content);
 
       $post_content = preg_replace_callback(
         "#(<\s*a\s+[^>]*href\s*=\s*[\"'])(?!http|mailto|javascript|\#)([^\"'>]+)([\"'>]+)#",
@@ -224,6 +270,10 @@ class ScrapeSite
         },
         $post_content
       );
+
+      if($post_type == "post") {
+        $post_content = preg_replace("/<p><strong>([0-9]{1,2} [A-Za-z]+ [0-9]{4})<\/strong><\/p>/", "", $post_content);
+      }
 
       $post_content = iconv("UTF-8", "ISO-8859-1//TRANSLIT", $post_content);
       $post_content = mb_convert_encoding($post_content, 'HTML-ENTITIES', 'iso-8859-1');
@@ -299,18 +349,35 @@ class ScrapeSite
   }
 
   /**
+   * Scrape a page date
+   */
+  protected function pageDate($crawler)
+  {
+    $crawler->filter('.FR')->each(function ($node, $i) use (&$page_date) {
+      preg_match("/\d{2}-[a-zA-z]{3}-\d{4}/", "19-Mar-2015", $matches);
+      if(!empty($matches[0])) {
+        $date = DateTime::createFromFormat('d-M-Y', $matches[0]);
+        $page_date = $date->format('Y-m-d H:i:s');
+      }
+    });
+    return $page_date;
+  }
+
+  /**
    * Scrape a post date
    */
   protected function postDate($crawler)
   {
-    $crawler->filter('.FR')->each(function ($node, $i) use (&$post_date) {
-      preg_match("/\d{2}-[a-zA-z]{3}-\d{4}/", $node->text(), $matches);
+    $post_date = $crawler->filter('#wide p strong')->each(function ($node, $i) {
+      preg_match("/^[0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4}/", $node->text(), $matches);
       if(!empty($matches[0])) {
-        $date = DateTime::createFromFormat('d-M-Y', $matches[0]);
-        $post_date = $date->format('Y-m-d H:i:s');
+        $matches[0] = preg_replace('/\s+/', ' ', $matches[0]);
+        $matches[0] = str_replace("Febrary", "February", $matches[0]);
+        $date = DateTime::createFromFormat('j F Y', $matches[0]);
+        return $date->format('Y-m-d H:i:s');
       }
     });
-    return $post_date;
+    return $post_date[0];
   }
 
   /**
@@ -336,7 +403,8 @@ class ScrapeSite
       }
 
       if(!empty($error)) {
-        die("There was an error importing the posts.");
+        print "There was an error importing the posts.";
+        die();
       }
     }
   }
@@ -355,7 +423,7 @@ class ScrapeSite
   }
 }
 
-$export = new ScrapeSite("internal_html.csv", "export.json", false);
+$export = new ScrapeSite("internal_html.csv", "export.json", true);
 ?>
 </body>
 </html>
