@@ -1,5 +1,109 @@
 [
     {
+        "key": "group_55670b2137d2d",
+        "title": "Alternative Link",
+        "fields": [
+            {
+                "key": "field_556ee701c2f60",
+                "label": "Type",
+                "name": "type",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "Internal": "Internal",
+                    "External": "External"
+                },
+                "default_value": {
+                    "": ""
+                },
+                "allow_null": 1,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
+                "key": "field_556ee72fc2f61",
+                "label": "Internal Link",
+                "name": "internal_link",
+                "type": "page_link",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_556ee701c2f60",
+                            "operator": "==",
+                            "value": "Internal"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [],
+                "taxonomy": [],
+                "allow_null": 0,
+                "multiple": 0
+            },
+            {
+                "key": "field_55670b267464c",
+                "label": "External Link",
+                "name": "external_link",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_556ee701c2f60",
+                            "operator": "==",
+                            "value": "External"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": ""
+    },
+    {
         "key": "group_55659a66ee0b5",
         "title": "Event",
         "fields": [
@@ -602,14 +706,30 @@
         ]
     },
     {
-        "key": "group_55670b2137d2d",
-        "title": "News",
+        "key": "group_556f16935abca",
+        "title": "Sidebar",
         "fields": [
             {
-                "key": "field_55670b267464c",
-                "label": "External file or link",
-                "name": "external_file_or_link",
-                "type": "text",
+                "key": "field_556f169900ae7",
+                "label": "Children Pages",
+                "name": "children",
+                "type": "true_false",
+                "instructions": "Should this menu appear on any child pages",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0
+            },
+            {
+                "key": "field_556f16dc00ae8",
+                "label": "Links",
+                "name": "links",
+                "type": "repeater",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -618,13 +738,95 @@
                     "class": "",
                     "id": ""
                 },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": "",
-                "readonly": 0,
-                "disabled": 0
+                "min": "",
+                "max": "",
+                "layout": "row",
+                "button_label": "Add Link",
+                "sub_fields": [
+                    {
+                        "key": "field_556f16e400ae9",
+                        "label": "Type",
+                        "name": "link",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "Internal": "Internal",
+                            "External": "External"
+                        },
+                        "default_value": {
+                            "": ""
+                        },
+                        "allow_null": 1,
+                        "multiple": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "disabled": 0,
+                        "readonly": 0
+                    },
+                    {
+                        "key": "field_556f170700aea",
+                        "label": "Internal",
+                        "name": "internal",
+                        "type": "page_link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_556f16e400ae9",
+                                    "operator": "==",
+                                    "value": "Internal"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "post_type": [],
+                        "taxonomy": [],
+                        "allow_null": 0,
+                        "multiple": 0
+                    },
+                    {
+                        "key": "field_556f170e00aeb",
+                        "label": "External",
+                        "name": "external",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_556f16e400ae9",
+                                    "operator": "==",
+                                    "value": "External"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    }
+                ]
             }
         ],
         "location": [
@@ -632,7 +834,7 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "post"
+                    "value": "page"
                 }
             ]
         ],
