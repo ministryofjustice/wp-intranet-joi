@@ -175,3 +175,14 @@ function get_ID_by_slug($page_slug) {
     }
 }
 
+function remove_post_menus() {
+  remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category');
+  remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
+}
+add_action('admin_menu',  __NAMESPACE__ . '\\remove_post_menus');
+
+function remove_post_metaboxes() {
+  remove_meta_box( 'categorydiv','post','normal' );
+  remove_meta_box( 'tagsdiv-post_tag','post','normal' );
+}
+add_action('admin_menu', __NAMESPACE__ . '\\remove_post_metaboxes');
