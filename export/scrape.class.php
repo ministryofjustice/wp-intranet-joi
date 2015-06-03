@@ -63,7 +63,11 @@ class ScrapeSite
     foreach($urls as $url) {
       $result = $this->crawl($url);
       if(!empty($result)) {
-        $scrape[] = $result;
+        if (is_array($result[0])) {
+          $scrape = array_merge($scrape, $result);
+        } else {
+          $scrape[] = $result;
+        }
       }
     }
 
@@ -142,21 +146,17 @@ class ScrapeSite
             ];
           } elseif($post_type == "archive") {
             //$this->getExternal($crawler);
-            $this->newsArchive($crawler);
+            $scrape = $this->newsArchive($crawler);
           } elseif($post_type == "post") {
-            $date = $this->postDate($crawler);
-            if(empty($date) || $date == null) {
-              $date = $this->pageDate($crawler);
-            }
             $scrape = [
               "post_title" => $this->postTitle($crawler, $parent),
               "post_content" => $this->postContent($crawler, $post_type),
               "post_name" => $this->postName($url),
-              "post_date" => $date,
+              "post_date" => $this->postDate($crawler),
               "post_type" => $post_type,
             ];
           } elseif($post_type == "events") {
-
+            // Let's just do this manually...
           }
 
           if(!empty($scrape)) {
@@ -206,12 +206,42 @@ class ScrapeSite
    */
   protected function newsArchive($crawler)
   {
-    $crawler->filter('#wide')->each(function ($node, $i) use (&$post_title) {
+    $crawler->filter('#wide')->each(function ($node, $i) use (&$scrape) {
       $html = str_replace("<hr />", "<hr>", $node->html());
       $posts = explode("<hr>", $html);
       array_shift($posts);
-      var_dump($posts);
+
+      $scrape = [];
+      foreach ($posts as $post) {
+        preg_match("/<h2>\X+<\/h2>/", $post, $titles);
+        $title = "";
+        if(!empty($titles[0])) {
+          $title = trim(strip_tags($titles[0]));
+          $title = preg_replace('/\s+/', ' ', $title);
+          $title = str_replace("&amp;", "&", $title);
+        }
+
+        $date = "";
+        preg_match("/<strong>\d{1,2}\s+[A-Za-z]+\s+\d{4}<\/strong>/", $post, $dates);
+        if(!empty($dates[0])) {
+          $date = trim(strip_tags($dates[0]));
+          $date = DateTime::createFromFormat('j F Y', $date);
+          $date = $date->format('Y-m-d H:i:s');
+        }
+
+        $post = preg_replace("/<h2>\X+<\/h2>/", "", $post);
+        $post = preg_replace("/<p><strong>\d{1,2}\s+[A-Za-z]+\s+\d{4}<\/strong><\/p>/", "", $post);
+        $post = preg_replace("/<!--.*-->/", "", $post);
+
+        $scrape[] = [
+          "post_title" => $title,
+          "post_content" => $post,
+          "post_date" => $date,
+          "post_type" => "post"
+        ];
+      }
     });
+    return $scrape;
   }
 
   /**
@@ -423,7 +453,7 @@ class ScrapeSite
   }
 }
 
-$export = new ScrapeSite("internal_html.csv", "export.json", true);
+$export = new ScrapeSite("internal_html.csv", "export.json", false);
 ?>
 </body>
 </html>
