@@ -119,7 +119,7 @@ wp_nav_menu($defaults); */?>
 <li><a href="<?= get_site_url() ?>/working_with/guidance_researchers/">Guidance for researchers</a></li>
 </ul>
 </li>
-<li><a href="<?= get_site_url() ?>/calendar/">Events calendar</a></li>
+<li><a href="<?= get_site_url() ?>/event/2015/<?= date('m'); ?>/">Events calendar</a></li>
 <li><a href="<?= get_site_url() ?>/judicial_database/">Judicial database</a></li>
 <li><a href="<?= get_site_url() ?>/links/">Useful links</a></li>
 </ul> 
