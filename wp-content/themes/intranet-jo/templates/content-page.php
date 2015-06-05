@@ -27,7 +27,21 @@ if (is_page('contacts') || $post->post_parent ==  $contacts_id || $parent_post->
 <?php } ?>
 
       </div>
-   <div class="column grid_12" id="mid">
- <?php the_content(); ?>
- </div>
+   	<div class="column grid_12" id="mid">
+		<?php 
+		global $post;
+		$parents = get_post_ancestors( $post->ID );
+		$id = ($parents) ? $parents[count($parents)-1]: $post->ID; 
+		?>
+		<?php if($id != get_the_ID()): ?>
+			<h1><?= get_the_title( $id ); ?></h1>
+			<h2><?php the_title(); ?></h2>
+		<?php else: ?>
+			<h1><?php the_title(); ?></h1>
+		<?php endif; ?>
+
+		
+
+ 		<?php the_content(); ?>
+ 	</div>
  </div>
