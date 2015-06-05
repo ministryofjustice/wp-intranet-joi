@@ -47,74 +47,83 @@
     
     <!-- Main -->
  <div class="column grid_15" id="navigation">
+
+<?php /*$defaults = array(
+
+  'container_id'    => 'cssmenu',
+  'menu_class'      => '',
+  'menu'            => 'Primary Navigation',
+);
+
+wp_nav_menu($defaults); */?>
 <div id="cssmenu">
+ <ul>
+<li><a href="<?= get_site_url() ?>/">Home</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/">Contacts</a>
 <ul>
-<li><a href="../joew/index.htm">Home</a></li>
-<li><a href="../joew/contacts/index.htm">Contacts</a>
-<ul>
-<li><a href="../joew/contacts/ceo.htm">Chief Executive's Office</a></li>
-<li><a href="../joew/contacts/hr-judiciary/index.htm">HR Judiciary</a></li>
-<li><a href="../joew/contacts/jc/index.htm">Judicial College</a></li>
-<li><a href="../joew/contacts/jcio/index.htm">Judicial Conduct Investigations Office</a></li>
-<li><a href="../joew/contacts/private-offices/index.htm">Judicial Private Offices</a></li>
-<li><a href="../joew/contacts/cccs/index.htm">Communications</a></li>
-<li><a href="../joew/contacts/bus-support.htm">Business Support</a></li>
-<li><a href="../joew/contacts/jud-international-team.htm">International Team</a></li>
-<li><a href="../joew/contacts/reg-sec/index.htm">Regional Secretariats</a> </li>
-<li><a href="../joew/contacts/guide.htm">Key contacts</a></li>
-<li><a href="../joew/about-us/structure/organograms/index.htm">Organisation charts</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/ceo/">Chief Executive's Office</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/hr-judiciary/">HR Judiciary</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/jc/">Judicial College</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/jcio/">Judicial Conduct Investigations Office</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/private-offices/">Judicial Private Offices</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/cccs/">Communications</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/bus-support/">Business Support</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/jud-international-team/">International Team</a></li>
+<li><a href="<?= get_site_url() ?>/contacts/reg-sec/">Regional Secretariats</a> </li>
+<li><a href="<?= get_site_url() ?>/contacts/guide/">Key contacts</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/structure/organograms/">Organisation charts</a></li>
 </ul>
 </li>   
-<li><a href="../joew/about-us/index.htm">About us</a>
+<li><a href="<?= get_site_url() ?>/about-us/">About us</a>
   <ul>
-<li><a href="../joew/about-us/structure/index.htm">Structure</a></li>
-<li><a href="../joew/about-us/jillians-blog/index.htm">Jillian's blog</a></li>
-<li><a href="../joew/about-us/options-for-change/index.htm">Options for Change</a></li>
-<li><a href="../joew/about-us/business-plan/index.htm">Business Plan</a></li>
-<li><a href="../joew/about-us/leadership/index.htm">Leadership framework</a></li>
-<li><a href="../joew/about-us/statement-exp/index.htm">Statement of expectations</a></li>
-<li><a href="../joew/about-us/management_boards/index.htm">Management Board</a></li>
-<li><a href="../joew/about-us/ses/index.htm">Staff Engagement</a></li> 
-<li><a href="../joew/about-us/icg/index.htm">Internal Communications Group</a></li>
-<li><a href="../joew/about-us/jo-story/index.htm">JO Story</a></li>
-<li><a href="../joew/about-us/60seconds/index.htm">60 seconds with...</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/structure/">Structure</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/jillians-blog/">Jillian's blog</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/options-for-change/">Options for Change</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/business-plan/">Business Plan</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/leadership/">Leadership framework</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/statement-exp/">Statement of expectations</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/management_boards/">Management Board</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/ses/">Staff Engagement</a></li> 
+<li><a href="<?= get_site_url() ?>/about-us/icg/">Internal Communications Group</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/jo-story/">JO Story</a></li>
+<li><a href="<?= get_site_url() ?>/about-us/60seconds/">60 seconds with...</a></li>
       </ul>
     </li>
-          <li><a href="../joew/working_in/index.htm">Working in JO</a>     
+          <li><a href="<?= get_site_url() ?>/working_in/">Working in JO</a>     
           <ul>
-        <li><a href="../joew/working_in/ci/index.htm">Continuous Improvement (CI)</a></li> 
-<li><a href="../joew/working_in/eoi.htm">Expressions of interest</a></li> 
-  <li><a href="../joew/working_in/facilities.htm">Facilities</a></li>
-    <li><a href="../joew/working_in/finance.htm">Finance</a></li>
-        <li><a href="../joew/working_in/flexi-working-proj-management/index.htm">Flexible Assignment Working & Project Management</a></li>
-    <li><a href="../joew/working_in/forms.htm">Forms</a></li>
-     <li><a href="../joew/working_in/hs.htm">H & S</a></li>
-          <li><a href="../joew/working_in/hr.htm">HR</a></li>
-           <li><a href="../joew/working_in/jo-induction.htm">Induction</a></li>
-           <li><a href="../joew/working_in/information-assurance.htm">Information Assurance</a></li>
-<li><a href="../joew/working_in/it-housekeeping.htm">IT</a></li>
-     <li><a href="working_in/l-and-d/l-d.htm">Learning and development</a></li>
-     <li><a href="../joew/working_in/reference.htm">Reference</a></li>
- <li><a href="../joew/working_in/skills-exp/index.htm">Skills register</a></li>
-     <li><a href="../joew/working_in/travel.htm">Travel</a></li>
+        <li><a href="<?= get_site_url() ?>/working_in/ci/">Continuous Improvement (CI)</a></li> 
+<li><a href="<?= get_site_url() ?>/working_in/eoi/">Expressions of interest</a></li> 
+  <li><a href="<?= get_site_url() ?>/working_in/facilities/">Facilities</a></li>
+    <li><a href="<?= get_site_url() ?>/working_in/finance/">Finance</a></li>
+        <li><a href="<?= get_site_url() ?>/working_in/flexi-working-proj-management/">Flexible Assignment Working & Project Management</a></li>
+    <li><a href="<?= get_site_url() ?>/working_in/forms/">Forms</a></li>
+     <li><a href="<?= get_site_url() ?>/working_in/hs/">H & S</a></li>
+          <li><a href="<?= get_site_url() ?>/working_in/hr/">HR</a></li>
+           <li><a href="<?= get_site_url() ?>/working_in/jo-induction/">Induction</a></li>
+           <li><a href="<?= get_site_url() ?>/working_in/information-assurance/">Information Assurance</a></li>
+<li><a href="<?= get_site_url() ?>/working_in/it-housekeeping/">IT</a></li>
+     <li><a href="working_in/l-and-d/l-d/">Learning and development</a></li>
+     <li><a href="<?= get_site_url() ?>/working_in/reference/">Reference</a></li>
+ <li><a href="<?= get_site_url() ?>/working_in/skills-exp/">Skills register</a></li>
+     <li><a href="<?= get_site_url() ?>/working_in/travel/">Travel</a></li>
           </ul>
         </li>
-          <li><a href="../joew/working_with/index.htm">Working with the judiciary</a>
+          <li><a href="<?= get_site_url() ?>/working_with/">Working with the judiciary</a>
           <ul>
-        <li><a href="../joew/working_with/comms.htm">Communicating with the judiciary</a></li>
-<li><a href="../joew/working_with/letters.htm">Drafting  letters for the senior judiciary</a></li>
-<li><a href="../joew/working_with/sub-memo.htm">Submissions and memos</a></li>
-<li><a href="../joew/working_with/arrangements.htm">Arrangements when out of the office</a></li>
-<li><a href="../joew/working_with/jud-gov/jud-gov-homepage.htm">Judicial Governance</a></li>
-<li><a href="../joew/working_with/standardised-briefings.htm">Standardised Briefings and Itineraries</a></li>
-<li><a href="../joew/working_with/guidance_researchers.htm">Guidance for researchers</a></li>
+        <li><a href="<?= get_site_url() ?>/working_with/comms/">Communicating with the judiciary</a></li>
+<li><a href="<?= get_site_url() ?>/working_with/letters/">Drafting  letters for the senior judiciary</a></li>
+<li><a href="<?= get_site_url() ?>/working_with/sub-memo/">Submissions and memos</a></li>
+<li><a href="<?= get_site_url() ?>/working_with/arrangements/">Arrangements when out of the office</a></li>
+<li><a href="<?= get_site_url() ?>/working_with/jud-gov/jud-gov-homepage/">Judicial Governance</a></li>
+<li><a href="<?= get_site_url() ?>/working_with/standardised-briefings/">Standardised Briefings and Itineraries</a></li>
+<li><a href="<?= get_site_url() ?>/working_with/guidance_researchers/">Guidance for researchers</a></li>
 </ul>
 </li>
-<li><a href="../joew/calendar/index.htm">Events calendar</a></li>
-<li><a href="../joew/judicial_database/index.htm">Judicial database</a></li>
-<li><a href="../joew/links.htm">Useful links</a></li>
+<li><a href="<?= get_site_url() ?>/calendar/">Events calendar</a></li>
+<li><a href="<?= get_site_url() ?>/judicial_database/">Judicial database</a></li>
+<li><a href="<?= get_site_url() ?>/links/">Useful links</a></li>
 </ul> 
-</div>   
+  </div>
 </div> 
 
       <!-- Top navigation end --> 
