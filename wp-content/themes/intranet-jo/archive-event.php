@@ -24,10 +24,22 @@ if(!empty($date)):
 <?php $query = Extras\event_query(); ?>
 
 <?php if (!$query->have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
+  
+    <h3>No events for <?= $date->format('F') . " " . get_query_var('event_year'); ?>.</h3>
+    <p>If you have any events to go on the JO Calendar please email the details to <a href="mailto:judicialwebupdates@judiciary.gsi.gov.uk">judicialwebupdates@judiciary.gsi.gov.uk</a>.</p>
+    </div>
+    <div class="cal">
+<?php
+  $year = get_query_var('event_year'); 
+  $month = get_query_var( 'event_month' );
+  $prev = date("Y/m", mktime(0, 0, 0, $month-1, 1, $year));
+  $next = date("Y/m", mktime(0, 0, 0, $month+1, 1, $year));
+?>
+<div class="floatRight"><a href="<?= get_site_url() . "/event/" . $next; ?>">Next month</a> &gt;&gt;</div>
+<div>&lt;&lt; <a href="<?= get_site_url() . "/event/" . $prev; ?>">Previous month</a> </div>
+</div>
+
+
 <?php endif; ?>
 <?php $dategroup = null; ?>
 <?php while ($query->have_posts()) : $query->the_post(); ?>
@@ -39,14 +51,26 @@ if(!empty($date)):
   <?php $dategroup = $postdate; endif; ?>
   <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 <?php endwhile; ?>
-
-<?php if ($query->have_posts()) : ?>
   </ul>
+<?php if ($query->have_posts()) : ?>
+
+
+</div>
+
+<div class="cal">
+<?php
+  $year = get_query_var('event_year'); 
+  $month = get_query_var( 'event_month' );
+  $prev = date("Y/m", mktime(0, 0, 0, $month-1, 1, $year));
+  $next = date("Y/m", mktime(0, 0, 0, $month+1, 1, $year));
+?>
+<div class="floatRight"><a href="<?= get_site_url() . "/event/" . $next; ?>">Next month</a> &gt;&gt;</div>
+<div>&lt;&lt; <a href="<?= get_site_url() . "/event/" . $prev; ?>">Previous month</a> </div>
+</div>
+
 <?php endif; ?>
 
 </div>
-
 </div>
-
 </div>
 
