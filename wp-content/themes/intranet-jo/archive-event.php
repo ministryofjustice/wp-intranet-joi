@@ -6,7 +6,22 @@
 
 <!-- Left nav -->
 <div class="column grid_3">
-<?php wp_nav_menu( array('menu' => 'Events' )); ?>
+<?php $year = get_query_var('event_year');?>
+<?php $month = get_query_var('event_year');?>
+<ul id="menu-events" class="menu"><li id="menu-item-16173" class="menu-item"><a href="<?= get_site_url() . "/event/" . $year . "/" . date("J"); ?>/"><?= $year; ?> Events calendar</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 01) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/01">January</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 02) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/02">February</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 03) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/03">March</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 04) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/04">April</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 05) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/05">May</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 06) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/06">June</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 07) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/07">July</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 08) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/08">August</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 09) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/09">September</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 10) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/10">October</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 11) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/11">November</a></li>
+<li class="menu-item <?php if(get_query_var( 'event_month' ) == 12) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/12">December</a></li>
+</ul>
 </div>
      <!-- Left nav end -->
      <!-- Mid section -->
