@@ -8,7 +8,7 @@
 <div class="column grid_3">
 <?php $year = get_query_var('event_year');?>
 <?php $month = get_query_var('event_year');?>
-<ul id="menu-events" class="menu"><li id="menu-item-16173" class="menu-item"><a href="<?= get_site_url() . "/event/" . $year . "/" . date("J"); ?>/"><?= $year; ?> Events calendar</a></li>
+<ul id="menu-events" class="menu"><li id="menu-item-16173" class="menu-item"><a href="<?= get_site_url() . "/event/" . $year . "/" . date('m'); ?>/"><?= $year; ?> Events calendar</a></li>
 <li class="menu-item <?php if(get_query_var( 'event_month' ) == 01) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/01">January</a></li>
 <li class="menu-item <?php if(get_query_var( 'event_month' ) == 02) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/02">February</a></li>
 <li class="menu-item <?php if(get_query_var( 'event_month' ) == 03) { echo " current-menu-item"; } ?>"><a href="<?= get_site_url() . "/event/" . $year; ?>/03">March</a></li>
