@@ -622,12 +622,12 @@ border-bottom: 5px solid #006d81;
 		padding:  5px 12px;
 		}
 		
-		.menu > li.current_page_item > a
+		.menu > li.current_page_item > a, .menu > li.current-menu-item > a
 		{
 		background:  #b9dadf url(../../uploads/bullet-blue.gif) no-repeat 2px 6px!important;
 		}
 
-		.menu > li:first-child.current_page_item > a
+		.menu > li:first-child.current_page_item > a, .menu > li:first-child.current-menu-item > a
 		{
 		background:  #006d81 url(../../uploads/bullet-white.gif) no-repeat 2px 6px!important;
 		}
