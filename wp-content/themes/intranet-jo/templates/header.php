@@ -5,7 +5,7 @@
       <div class="column grid_15" id="header">
         <div class="row">         
           <!-- Logo -->
-          <div class="column grid_9"><a href="index.htm"><img src="<?php echo content_url(); ?>/uploads/new-intranet-logo-sm.png" border="0" alt="Judicial Office Intranet" /></a></div>
+          <div class="column grid_9"><a href="/"><img src="<?php echo content_url(); ?>/uploads/new-intranet-logo-sm.png" border="0" alt="Judicial Office Intranet" /></a></div>
           <!-- Logo end -->            
           <!-- Search -->
           <div class="column grid_4" id="search">
