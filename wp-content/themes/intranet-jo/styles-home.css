@@ -512,7 +512,7 @@ cssmenu Nav
   transition: color .2s ease;
 }
 #cssmenu > ul > li:hover > a,
-#cssmenu > ul > li.active > a {
+#cssmenu > ul > li.active > a, #cssmenu > ul > li.current-menu-item a {
   color: #000;
   background: #b9dadf;
 }

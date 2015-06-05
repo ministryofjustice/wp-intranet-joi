@@ -454,7 +454,7 @@ list-style: none;
 margin: 0 0 15px 0;
 }
 
-#wide ul li
+#wide ul li, #main .entry-content ul li
 {
 background:  url(../../uploads/bullet-blue.gif) no-repeat 8px 5px;
 padding:  0 0 0 22px;
@@ -887,7 +887,7 @@ cssmenu Nav
   transition: color .2s ease;
 }
 #cssmenu > ul > li:hover > a,
-#cssmenu > ul > li.active > a {
+#cssmenu > ul > li.active > a, #cssmenu > ul > li.current-menu-item a {
   color: #000;
   background: #b9dadf;
 }
