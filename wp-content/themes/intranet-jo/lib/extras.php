@@ -69,9 +69,12 @@ remove_filter( 'the_excerpt', 'wpautop' );
 
 // READ THIS: https://github.com/jjgrainger/wp-custom-post-type-class/blob/master/README.md
 $events = new CPT\CPT('event', array(
-  'menu_icon'   => 'dashicons-calendar-alt',
-  'supports' => false,
-  'has_archive' => true
+  'menu_icon'       => 'dashicons-calendar-alt',
+  'supports'        => false,
+  'has_archive'     => true,
+  'rewrite'         => array(
+    'slug'            =>  'calendar'
+  ),
 ));
 
 $events->columns(array(
@@ -103,7 +106,7 @@ add_filter( 'query_vars', __NAMESPACE__ . '\\add_custom_query_var' );
  * Add custom rewrite rules
  */
 function custom_rewrite() {
-  add_rewrite_rule('^event/([0-9]+)/([0-9]+)/?', 'index.php?post_type=event&event_year=$matches[1]&event_month=$matches[2]', 'top');
+  add_rewrite_rule('^calendar/([0-9]+)/([0-9]+)/?', 'index.php?post_type=event&event_year=$matches[1]&event_month=$matches[2]', 'top');
 }
 add_action('init', __NAMESPACE__ . '\\custom_rewrite');
 
@@ -186,3 +189,10 @@ function remove_post_metaboxes() {
   remove_meta_box( 'tagsdiv-post_tag','post','normal' );
 }
 add_action('admin_menu', __NAMESPACE__ . '\\remove_post_metaboxes');
+
+function month_match($url_month, $link_month) {
+  $url_month = (int) $url_month;
+  if($url_month == $link_month) {
+    return " current-menu-item";
+  }
+}
