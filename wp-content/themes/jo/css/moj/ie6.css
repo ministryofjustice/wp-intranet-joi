@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+/**
+ * [File : ie6.css]
+ *
+ * Project:         Ministry of Justice Intranet
+ * Version:         1.0.
+ * Last change:     10/09/09
+ * Assigned to:     Geoff Anscombe, Harjinder Virk MOJ
+ *
+ *
+ *
+ * [Table of contents]
+ *
+ *  Layout
+*/
+
+
+/*------------------------------------------------------------------
+ * Layout
+*/
+#leftColumn {margin-left: 4px;}
+
+
+/* leave the below styles commented out I may need to implement them later for IE5.5 only css */
+/*------------------------------------------------------------------
+ * Navigation
+*/
+/* left navigation for main 4 sections *
+ul#sections li a {width: 200px;}
+/* sub navigation per section  *
+#sub-level li a {width: 200px;}
+#sub-level h3 {width: 200px;}
+/* rss module *
+.module .rss h3, .module .module-nav h3 {width: 200px;}/
+/* a-z *
+#rightColumn ul#a-z li {width: 20px;}
+#rightColumn ul#a-z li a {width: 18px;}
+.media-summaries-table .right_col {width: 100%;}
+/* Pullquote classes *
+.pullquote-right {width:200px;}
+/* Search box *
+.search-block {width: 243px;}
+.set-your-intranet h3 {width: 200px;}
+
+*/

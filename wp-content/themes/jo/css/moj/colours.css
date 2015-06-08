@@ -1,0 +1,254 @@
+@charset "utf-8";
+/* CSS Document */
+/**
+ * [File : colours.css]
+ *
+ * Project:         Ministry of Justice Intranet
+ * Version:         1.0.
+ * Last change:     16/10/09
+ * Assigned to:     Geoff Anscombe, Harjinder Virk MOJ
+ *
+ *
+ *
+ * [Table of contents]
+ *
+ *  Content
+ *  Heading structure colours and bullets
+ *  Landing  boxes
+ *  Navigation
+ *    Module-nav bullets
+ *    Prettyphotos - lightbox
+ *    Back to tops + anchors
+ *  Tabs panel
+*/
+
+/*------------------------------------------------------------------
+ * Content
+*/
+/* hyperlinks */
+body.section1 a {color: #a70240;}
+body.section2 a {color: #606f00;}
+body.section3 a {color: #006F9E;}
+body.section4 a {color: #53284f;}
+/* bullets lists */
+body.section1 .module ul li, body.section1 #mainContent ul li {background: url(/images/red.gif) no-repeat 0 5px;}
+body.section2 .module ul li, body.section2 #mainContent ul li {background: url(/images/green.gif) no-repeat 0 5px;}
+body.section3 .module ul li, body.section3 #mainContent ul li {background: url(/images/blue-bullet.gif) no-repeat 0 5px;}
+body.section4 .module ul li, body.section4 #mainContent ul li {background: url(/images/purple.gif) no-repeat 0 5px;}
+
+
+/*------------------------------------------------------------------
+ * Heading structure colours and bullets
+*/
+/* section 1 */
+body.section1 #mainContent h1, body.section1 #mainContent h3 {color: #a70240;}
+body.section1 #mainContent h1 {background-image: url(/images/page-title-bullet.gif);}
+body.section1 #mainContent h2 {background-image: url(/images/page-sub-title-bullet.gif);}
+/* section 2 */
+body.section2 #mainContent h1, body.section2 #mainContent h3 {color: #636b00;}
+body.section2 #mainContent h1 {background-image: url(/images/guidance-page-title-bullet.gif);}
+body.section2 #mainContent h2 {background-image: url(/images/guidanc-page-sub-title-bullet.gif);}
+/* section 3 */
+body.section3 #mainContent h1, body.section3 #mainContent h3 {color: #007895;}
+body.section3 #mainContent h1 {background-image: url(/images/ministers-page-title-bullet.gif);}
+body.section3 #mainContent h2 {background-image: url(/images/ministers-page-sub-title-bullet.gif);}
+/* section 4 */
+body.section4 #mainContent h1, body.section4 #mainContent h3 {color: #53284f;}
+body.section4 #mainContent h1 {background-image: url(/images/org-page-title-bullet.gif);}
+body.section4 #mainContent h2 {background-image: url(/images/org-page-sub-title-bullet.gif);}
+
+
+/*------------------------------------------------------------------
+ * Landing  boxes
+*/
+/*
+html body.section1 #mainContent .landing-box h2 a:hover{background: #d3809f;}
+html body.section2 #mainContent .landing-box h2 a:hover{background: #afb77f;}
+html body.section3 #mainContent .landing-box h2 a:hover{background: #7fbbca;}
+html body.section4 #mainContent .landing-box h2 a:hover{background: #a993a7;}
+*/
+
+
+/*------------------------------------------------------------------
+ * Navigation
+*/
+/* colors left navigation for main 4 sections */
+body ul#sections li a{background: #000;}
+body.section1 ul#sections li a{background-color: #a70240;}
+body.section2 ul#sections li a{background-color: #606f00;}
+body.section3 ul#sections li a{background-color: #007895;}
+body.section4 ul#sections li a{background-color: #53284f;}
+body ul#sections li a:hover {background-color: #ccc; color: #000; text-decoration: none;}
+body.section1 ul#sections li a:hover {background-color: #000; color: #FFFFFF; text-decoration: none;}
+body.section2 ul#sections li a:hover {background-color: #000; color: #FFFFFF; text-decoration: none;}
+body.section3 ul#sections li a:hover {background-color: #000; color: #FFFFFF; text-decoration: none;}
+body.section4 ul#sections li a:hover {background-color: #000; color: #FFFFFF; text-decoration: none;}
+body ul#sections li.section1 a{background-color: #a70240;}
+body ul#sections li.section2 a{background-color: #606f00;}
+body ul#sections li.section3 a{background-color: #006F9E;}
+body ul#sections li.section4 a{background-color: #53284f;}
+/* colors for sub level 4 sections */
+/* news and annoucements */
+body #sub-level li.top-level a {color: #000;}
+body #sub-level li a {color: #005b82;}
+body #sub-level li.top-level a {background: #7fadc0;}
+body #sub-level li.top-level.top-current a {background: #d3809f url(/images/default.gif) no-repeat 10px 8px; }
+body #sub-level li.top-level a:hover {background: #d3809f url(/images/default.gif) no-repeat 10px 8px; }
+body #sub-level li.current a {background: #f3f2e9 url(/images/default.gif) no-repeat 10px 8px; }
+body #sub-level li a:hover {background:  #f3f2e9 url(/images/default.gif) no-repeat 10px 8px;}
+body #sub-level h3 {background: #7fadc0;}
+body #sub-level h3:hover {background: #7fadc0 url(/images/default.gif) no-repeat 10px 8px;}
+/* news and annoucements */
+body.section1 #sub-level li.top-level a {color: #000;}
+body.section1 #sub-level li a {color: #a70240;}
+body.section1 #sub-level li.top-level a {background: #d3809f;}
+body.section1 #sub-level li.top-level.top-current a {background: #d3809f url(/images/red.gif) no-repeat 10px 8px; }
+body.section1 #sub-level li.top-level a:hover {background: #d3809f url(/images/red.gif) no-repeat 10px 8px; }
+body.section1 #sub-level li.current a {background: #f3f2e9 url(/images/red.gif) no-repeat 10px 8px; }
+body.section1 #sub-level li a:hover {background:  #f3f2e9 url(/images/red.gif) no-repeat 10px 8px;}
+body.section1 #sub-level h3 {background: #d3809f;}
+body.section1 #sub-level h3:hover {background: #d3809f url(/images/red.gif) no-repeat 10px 8px;}
+/* guidance and support */
+body.section2 #sub-level li.top-level a {color: #000;}
+body.section2 #sub-level li a {color: #606f00;}
+body.section2 #sub-level li.top-level a {background: #afb77f;}
+body.section2 #sub-level li.top-level.top-current a {background: #afb77f url(/images/green.gif) no-repeat 10px 8px; }
+body.section2 #sub-level li.current a {background: #f3f2e9 url(/images/green.gif) no-repeat 10px 8px; }
+body.section2 #sub-level li a:hover {background:  #f3f2e9 url(/images/green.gif) no-repeat 10px 8px;}
+body.section2 #sub-level h3 {background: #afb77f;}
+body.section2 #sub-level h3:hover {background:  #afb77f url(/images/green.gif) no-repeat 10px 8px;}
+/* ministers and support */
+body.section3 #sub-level li.top-level a {color: #000;}
+body.section3 #sub-level li a {color: #006F9E;}
+body.section3 #sub-level li.top-level a {background: #7fbbca;}
+body.section3 #sub-level li.top-level.top-current a {background: #7fbbca url(/images/blue-bullet.gif) no-repeat 10px 8px; }
+body.section3 #sub-level li.current a {background: #f3f2e9 url(/images/blue-bullet.gif) no-repeat 10px 8px; }
+body.section3 #sub-level li a:hover {background:  #f3f2e9 url(/images/blue-bullet.gif) no-repeat 10px 8px;}
+body.section3 #sub-level h3 {background: #7fbbca;}
+body.section3 #sub-level h3:hover {background:  #7fbbca url(/images/blue-bullet.gif) no-repeat 10px 8px;}
+/* organisation and vision */
+body.section4 #sub-level li.top-level a {color: #000;}
+body.section4 #sub-level li a {color: #53284f;}
+body.section4 #sub-level li.top-level a {background: #a993a7;}
+body.section4 #sub-level li.top-level.top-current a {background: #a993a7 url(/images/purple.gif) no-repeat 10px 8px; }
+body.section4 #sub-level li.current a {background: #f3f2e9 url(/images/purple.gif) no-repeat 10px 8px; }
+body.section4 #sub-level li a:hover {background:  #f3f2e9 url(/images/purple.gif) no-repeat 10px 8px;}
+body.section4 #sub-level h3 {background: #a993a7;}
+body.section4 #sub-level h3:hover {background:  #a993a7 url(/images/purple.gif) no-repeat 10px 8px;}
+ul#sections li.section1.current a{background-color: #a70240;}
+ul#sections li.section2.current a{background-color: #606f00;}
+ul#sections li.section3.current a{background-color: #006F9E;}
+ul#sections li.section4.current a{background-color: #53284f;}
+
+
+/*------------------------------------------------------------------
+ * Module-nav bullets
+*/
+body.section1 .module .module-nav div ul li a:hover, body.section1 .module .module-nav div ul li.current a{background: url(/images/red.gif) no-repeat scroll  10px 9px;}
+body.section2 .module .module-nav div ul li a:hover, body.section2 .module .module-nav div ul li.current a{background: url(/images/green.gif) no-repeat scroll  10px 9px;}
+body.section3 .module .module-nav div ul li a:hover, body.section3 .module .module-nav div ul li.current a{background: url(/images/blue-bullet.gif) no-repeat scroll  10px 9px;}
+body.section4 .module .module-nav div ul li a:hover, body.section4 .module .module-nav div ul li.current a{background: url(/images/purple.gif) no-repeat scroll  10px 9px;}
+
+
+/*------------------------------------------------------------------
+ * Prettyphotos - lightbox
+*/
+body div.ppt {background:#005b82;}
+body.section1 div.ppt {background:#A70240;}
+body.section2 div.ppt {background:#606f00;}
+body.section3 div.ppt {background:#006F9E;}
+body.section4 div.ppt {background:#53284f;}
+body div.dark_square .pp_content a.pp_close {background-image: url(/images/sprite-default.gif)}
+body.section1 div.dark_square .pp_content a.pp_close {background-image: url(/images/sprite-red.gif)}
+body.section2 div.dark_square .pp_content a.pp_close {background-image: url(/images/sprite-green.gif)}
+body.section3 div.dark_square .pp_content a.pp_close {background-image: url(/images/sprite-blue.gif)}
+body.section4 div.dark_square .pp_content a.pp_close {background-image: url(/images/sprite-purple.gif)}
+body div.pp_pic_holder {border: 2px solid #005b82;}
+body.section1 div.pp_pic_holder {border: 2px solid #A70240;}
+body.section2 div.pp_pic_holder {border: 2px solid #606f00;}
+body.section3 div.pp_pic_holder {border: 2px solid #006F9E;}
+body.section4 div.pp_pic_holder {border: 2px solid #53284f;}
+div.dark_square .pp_content a.pp_next:hover {background: url(/images/btnNext-default.gif) center right no-repeat;    cursor: pointer;}
+div.dark_square .pp_content a.pp_previous:hover {background: url(/images/btnPrevious-default.gif) center left no-repeat; cursor: pointer;}
+body.section1 div.dark_square .pp_content a.pp_next:hover {background: url(/images/btnNext-red.gif) center right no-repeat;    cursor: pointer;}
+body.section1 div.dark_square .pp_content a.pp_previous:hover {background: url(/images/btnPrevious-red.gif) center left no-repeat; cursor: pointer;}
+body.section2 div.dark_square .pp_content a.pp_next:hover {background: url(/images/btnNext-green.gif) center right no-repeat;    cursor: pointer;}
+body.section2 div.dark_square .pp_content a.pp_previous:hover {background: url(/images/btnPrevious-green.gif) center left no-repeat; cursor: pointer;}
+body.section3 div.dark_square .pp_content a.pp_next:hover {background: url(/images/btnNext-blue.gif) center right no-repeat;    cursor: pointer;}
+body.section3 div.dark_square .pp_content a.pp_previous:hover {background: url(/images/btnPrevious-blue.gif) center left no-repeat; cursor: pointer;}
+body.section4 div.dark_square .pp_content a.pp_next:hover {background: url(/images/btnNext-purple.gif) center right no-repeat;    cursor: pointer;}
+body.section4 div.dark_square .pp_content a.pp_previous:hover {background: url(/images/btnPrevious-purple.gif) center left no-repeat; cursor: pointer;}
+
+
+/*------------------------------------------------------------------
+ * Back to tops + anchors
+*/
+/* back to tops */
+/* body.homepage .back-to-top a{background: url(/images/back-to-top-main.gif) no-repeat left bottom;} */
+body .back-to-top a{background: url(/images/back-to-top-default.gif) no-repeat left bottom;}
+body.section1 .back-to-top a{background: url(/images/back-to-top-red.gif) no-repeat left bottom;}
+body.section2 .back-to-top a{background: url(/images/back-to-top-green.gif) no-repeat left bottom;}
+body.section3 .back-to-top a{background: url(/images/back-to-top-blue.gif) no-repeat left bottom;}
+body.section4 .back-to-top a{background: url(/images/back-to-top-purple.gif) no-repeat left bottom;}
+/* anchors */
+body #mainContent ul.anchors li{background: url(/images/anchor-arrow-default.gif) no-repeat left bottom;}
+body.section1 #mainContent ul.anchors li{background: url(/images/anchor-arrow-red.gif) no-repeat left bottom;}
+body.section2 #mainContent ul.anchors li{background: url(/images/anchor-arrow-green.gif) no-repeat left bottom;}
+body.section3 #mainContent ul.anchors li{background: url(/images/anchor-arrow-blue.gif) no-repeat left bottom;}
+body.section4 #mainContent ul.anchors li{background: url(/images/anchor-arrow-purple.gif) no-repeat left bottom;}
+
+
+/*------------------------------------------------------------------
+ * Tabs panel
+*/
+body.section1 #mainContent #tabs-panel h2 {color: #a70240;}
+body.section1 #mainContent #tabs-panel #tabs{border-bottom: 5px solid #a70240;}
+body.section1 #mainContent #tabs-panel #tabs li a{color: #a70240;}
+body.section1 #mainContent #tabs-panel #tabs li a:hover{background: #d3809f;}
+body.section1 #mainContent #tabs-panel #tabs li.tabs-selected a{background: #a70240;}
+body.section2 #mainContent #tabs-panel h2 {color: #606f00;}
+body.section2 #mainContent #tabs-panel #tabs{border-bottom: 5px solid #606f00;}
+body.section2 #mainContent #tabs-panel #tabs li a{color: #606f00;}
+body.section2 #mainContent #tabs-panel #tabs li a:hover{background: #afb77f;}
+body.section2 #mainContent #tabs-panel #tabs li.tabs-selected a{background: #606f00;}
+body.section2 #mainContent #tabs-panel #tabs li.tabs-selected .tab-nolink {background: #606f00; color: #fff;} 
+body.section3 #mainContent #tabs-panel h2 {color: #006F9E;}
+body.section3 #mainContent #tabs-panel #tabs{border-bottom: 5px solid #006F9E;}
+body.section3 #mainContent #tabs-panel #tabs li a{color: #006F9E;}
+body.section3 #mainContent #tabs-panel #tabs li a:hover{background: #7fbbca;}
+body.section3 #mainContent #tabs-panel #tabs li.tabs-selected a{background: #006F9E;}
+body.section4 #mainContent #tabs-panel h2 {color: #53284f;}
+body.section4 #mainContent #tabs-panel #tabs{border-bottom: 5px solid #53284f;}
+body.section4 #mainContent #tabs-panel #tabs li a{color: #53284f;}
+body.section4 #mainContent #tabs-panel #tabs li a:hover{background: #a993a7;}
+body.section4 #mainContent #tabs-panel #tabs li.tabs-selected a{background: #53284f;}
+
+
+/*------------------------------------------------------------------
+ * Promo Container
+*/
+body.homepage #mainContent .promo-container div{border-bottom: 1px solid #a70240;}
+body.homepage #mainContent .promo-container div a span.title, body.homepage #mainContent .promo-container div span.title{color: #A70240;}
+body.section1 #mainContent .promo-container div{border-bottom: 1px solid #a70240;}
+body.section1 #mainContent .promo-container div a span.title, body.section1 #mainContent .promo-container div span.title{color: #A70240;}
+body.section2 #mainContent .promo-container div{border-bottom: 1px solid #606f00;}
+body.section2 #mainContent .promo-container div a span.title, body.section2 #mainContent .promo-container div span.title{color: #606f00;}
+body.section3 #mainContent .promo-container div{border-bottom: 1px solid #006F9E;}
+body.section3 #mainContent .promo-container div a span.title, body.section3 #mainContent .promo-container div span.title{color: #006F9E;}
+body.section4 #mainContent .promo-container div{border-bottom: 1px solid #53284f;}
+body.section4 #mainContent .promo-container div a span.title, body.section4 #mainContent .promo-container div span.title{color: #53284f;}
+
+/*-----------------------------------------------------------
+  * Styles for Antonia Romeo udpate page 
+*/
+
+.seperator-ar {display: block; width: 99%; height: 10px; background: #f3f2e9; margin-top: 20px; margin-bottom: 0;}
+
+.ar-update {margin-top: 0; margin-bottom: 20px; padding-top: 18px; border-top: 1px solid #53284f; width: 99%;}
+.ar-update-last {margin-top: 10px; padding-bottom: 5px;}
+.ar-update p, .ar-update-last p, .ar-update ul {margin: 6px 0 6px 0 !important; padding: 0 !important;}
+.ar-update ul {margin: 0 !important; padding: 0 !important;}
+.ar-update h4 {margin-bottom: 10px;}
+.ar-update p.update-time, div.ar-update-last p.update-time {color: #53284f !important; font-weight: bold; font-size: 0.8em;}
+.seperator {margin-bottom: 20px;}
+p.more-updates {font-weight: bold; margin-top:  10px; text-align: right;}

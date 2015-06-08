@@ -1,0 +1,17 @@
+/* IE 7 styles */
+
+#mid ul li ul
+{
+margin:-15px 0 0 0!important;
+padding:0;
+}
+
+#mid ol li ol
+{
+margin:-15px 0 0 8px!important;
+}
+
+.searchbutton
+{
+padding:0 5px 1px 5px;
+}

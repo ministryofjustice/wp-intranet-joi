@@ -1,0 +1,15 @@
+body
+{
+background:  #fff;
+font-family:  Verdana, Arial/*, Tahoma, Calibri, Helvetica, sans-serif*/;
+font-size:  80% /*0.9em*/;
+}
+
+#page { width: 800px; margin: 20px auto; align:center;}
+
+#box { float: left; width: 300px; padding: 5px; margin: 5px;  border: 1px solid #EEE; }#
+
+h1 {font-size: 90%; color:  #006d81; }
+
+
+

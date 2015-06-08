@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+================================================================================
+Author:       Vera Mehta
+Created:      20 September 2010 
+Amended:      
+================================================================================
+*/
+
+
+/*
+--------------------------------------------------------------------------------
+                                  Reset css
+--------------------------------------------------------------------------------
+*/
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;font-variant:normal;}sup {vertical-align:text-top;}sub {vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}legend{color:#000;}
+/*
+--------------------------------------------------------------------------------
+                         	      General styles
+--------------------------------------------------------------------------------
+*/
+
+
+body {font-family:Tahoma, Verdana, Arial;margin:0 auto; padding:0 14px 0 14px;font-size: 0.85em; line-height:150%; width:1280px; position:relative; }
+a {color:#005b82; text-decoration: underline; font-size: 95%;}
+a:hover, a:focus {color: #222; text-decoration: underline;}
+a:visited {color:#660000; text-decoration:underline;}
+h1 {font:1.5em/130%  Verdana, Arial, Helvetica,sans-serif bold; }
+h2 { font: 1.2em/130% Verdana, Arial, Helvetica,sans-serif bold; margin:0 0 8px 0;}
+h3 {font: 1.3em/130% Verdana, Arial, Helvetica,sans-serif bold; }
+h4 {font: 1.2em/130% Verdana, Arial, Helvetica,sans-serif bold;}
+.bold, strong{font-weight:bold;} 
+.hide{display:none;}
+
+/*
+--------------------------------------------------------------------------------
+	 							Header area
+--------------------------------------------------------------------------------
+*/
+
+#wrapper {width: 100%; max-width: 1280px; min-width: 766px;}
+#wrapper #xwrapper #main-content {margin-top:10px; clear:both;}
+/* Header */
+
+#wrapper #header div#logo {background: url(/images/logos/bubble-logo.jpg) no-repeat right top;}
+
+/* Global navigation */
+
+#wrapper #globalNav { padding-left: 7px; position: relative;  background: #000 url(/images/nav_left_corner1.gif) no-repeat bottom left; clear:both;}
+#wrapper #globalNav ul {background: #000;  width: 99%;}
+#wrapper #globalNav .globalNav-inner { background: #000; width: 100%;}
+#wrapper #globalNav .globalnav {width: 100%; background: #000000 url(/images/nav_right_corner1.gif) no-repeat bottom right;}
+#wrapper #globalNav .globalnav ul li { float: left; margin: 0; padding: 0; background: #000;}
+#wrapper #globalNav .globalnav ul li a {display: block;padding-left: 7px; float: left;font-size: 90%; color: #fff;text-decoration: none;background: #000000 url(/images/white-pixel.gif) repeat-y top right;}
+#wrapper #globalNav .globalnav ul li a span.menu_ar {display: block; float: left; padding-top: 5px; padding-right: 7px; padding-top: 7px; padding-bottom: 7px;text-decoration: none;    background: #000000 url(/images/white-pixel.gif) repeat-y top right;}
+#wrapper #globalNav .globalnav.grey ul li a:hover, #wrapper #globalNav .globalnav.grey ul li.current a, #wrapper #globalNav .globalnav.grey ul li a:hover span.menu_ar, #wrapper #globalNav .globalnav.grey ul li.current a span.menu_ar {background: #ccc;    text-decoration: none;  cursor: pointer; color: #000;}
+
+/* Search box */
+
+#wrapper #header #search-box {position: absolute;background: #000000;color: #fff;border: 1px solid #fff;text-align: left;height: 70px;padding: 0px 10px 0 0;float: right;top: -5px;	margin: 0 8px 0 0;min-height:70px;min-width:246px;left: 1015px;}
+#wrapper #header #search-box .search-intranet {}
+#wrapper #header #search-box .search-none { padding-top: 3px; display: none;}
+#wrapper #header #search-box .searchbox { color: #000000; background-color: #ffffff; border: 1px solid #ffffff;}
+#wrapper #header #search-box .searchbutton { color: #000000; background-color: #ffffff; border: 1px solid #000000;}
+#wrapper #header #search-box form {font-size: 85%;}
+.date { position: relative; text-align: right; color: #FFFFFF;margin-bottom: 3px; margin-top: 3px; font-size: 85%;}
+
+
+/*
+--------------------------------------------------------------------------------
+								Main content areas
+--------------------------------------------------------------------------------
+*/
+
+/* left nav */
+
+#wrapper #xwrapper #main-content #left-nav {width:200px; padding:0; margin:10px 0 0 7px; background:#f3f2e9; float:left;  background: url("../images/corners/bottom_curve.gif") no-repeat bottom;padding:0 0 10px 0; }
+#wrapper #xwrapper #main-content #left-nav li {border-bottom:2px solid #fff;}
+#wrapper #xwrapper #main-content #left-nav li a {color:#000; text-decoration:none; display:block; padding:3px 3px 3px 25px; background-color:#f3f2e9;}
+#wrapper #xwrapper #main-content #left-nav li a:hover { background-image: url(/images/default-alt.gif); background-repeat: no-repeat; background-position: 10px 7px; padding-left: 25px;}
+#wrapper #xwrapper #main-content #left-nav li.current ul li.current-page {border-top:2px solid #fff;}
+
+/* main content */
+
+#wrapper #xwrapper #main-content #content {width:810px;padding: 5px 20px; float:left;}
+#wrapper #xwrapper #main-content #right-content {width:200px; padding:0; margin:10px 0; float:left;}
+#wrapper #xwrapper #main-content #right-content .module {background:url("../images/corners/bottom_curve.gif") no-repeat scroll center bottom #f3f2e9;border-top:3px solid #000000;display:block;font-size:95%;padding:0 0 10px 0;width:200px;}
+#wrapper #xwrapper #main-content #right-content .module h2 {background:#000; color:#fff; padding:3px;}
+#wrapper #xwrapper #main-content #right-content .module h2 .accordian-heading {border: 1px solid #000000; margin: 0; font-size: 1em; font-weight: normal;   padding: 0 3px; cursor: pointer; width: 192px; background:url(/images/drop-down-arrow.gif) no-repeat right; display: none; color:#fff;}
+#wrapper #xwrapper #main-content #right-content .module .accordian {padding:3px; clear:both;}
+
+#inner-wrapper {min-height: 90%; height: auto !important;height: 90%; margin: 0 auto 0; background: url(/images/bubble-logo.jpg) no-repeat right top;}
+#footer { background:#000000; font-size:95%; height:45px; margin:0; padding:5px 10px;}
+
+/* Landing pages */
+#wrapper #xwrapper #main-content #content .landing-box {width:48%; float:left;}
+#wrapper #xwrapper #main-content #content .landing-box h2 { background:none repeat scroll 0 0 #fff;border-top:10px solid #f3f2e9;font-family:Tahoma;font-size:1em!important; font-weight:bold; margin:0;padding:5px 0 0;}
+
