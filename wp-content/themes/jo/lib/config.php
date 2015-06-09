@@ -34,7 +34,8 @@ function display_sidebar() {
         ['is_page_template', 'template-custom.php'],
         ['is_page', ['links']],
         'is_search',
-        'is_single'
+        'is_single',
+        'is_home'
       ]
     );
 

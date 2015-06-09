@@ -2,6 +2,7 @@
 
 use Roots\Sage\Config;
 use Roots\Sage\Wrapper;
+use Roots\Sage\Extras;
 
 ?>
 
@@ -18,7 +19,22 @@ use Roots\Sage\Wrapper;
         get_template_part('templates/header');
       ?>
       <!-- Main -->
-      <?php if (Config\display_sidebar()) : ?>
+      <?php $menu = get_field('menu', Extras\get_top_parent_ID()); ?>
+
+      <?php if (Config\display_sidebar() && !empty($menu)) : ?>
+
+        <div class="row" id="main">
+          <?php include Wrapper\sidebar_path(); ?>
+          <!-- Mid section -->
+          <div class="column grid_9" id="mid">
+            <?php include Wrapper\template_path(); ?>
+          </div>
+          <!-- Mid section end -->
+          <?php include_once( 'templates/sidebar_right.php' ); ?>
+        </div>
+
+      <?php elseif (Config\display_sidebar()) : ?>
+
         <div class="row" id="main">
           <?php include Wrapper\sidebar_path(); ?>
           <!-- Mid section -->
@@ -27,10 +43,23 @@ use Roots\Sage\Wrapper;
           </div>
           <!-- Mid section end -->
         </div>
+
+      <?php elseif (!empty($menu)) : ?>
+        <div class="row" id="main">
+          <!-- Mid section -->
+          <div class="column grid_12" id="mid">
+            <?php include Wrapper\template_path(); ?>
+          </div>
+          <!-- Mid section end -->
+          <?php include_once( 'templates/sidebar_right.php' ); ?>
+        </div>
+
       <?php else: ?>
+
         <div class="row" id="wide">
           <?php include Wrapper\template_path(); ?>
         </div>
+
       <?php endif; ?>
       <!-- Main end -->
     </div>

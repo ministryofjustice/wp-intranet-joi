@@ -17,7 +17,7 @@
     <label for="surname" class="hidden-text">Surname</label>
     <input id="surname" name="surname" type="text" class="searchbox" size="13" value="Last name" onclick="this.value = '';" />
     <input type="submit" class="searchbutton" id="submit1" title="Search" value="Go" />
-    Search:
+    <br>Search:
     <input name="searchtype1" type="radio" id="intranet1" value="intranet" />
     <label for="intranet1">intranet</label>
     <input name="searchtype1" type="radio" id="people1" value="peoplefinder" checked="checked" />

@@ -206,3 +206,25 @@ function month_match($url_month, $link_month) {
     return "active";
   }
 }
+
+/**
+ * Get the most top parent ID
+ */
+function get_top_parent_ID() {
+  global $post;
+  $parents = get_post_ancestors( $post->ID );
+  $id = ($parents) ? $parents[count($parents)-1]: $post->ID;
+  return $id;
+}
+
+/**
+ * If URL has external link return it rather than permalink
+ */
+function replace_link($url) {
+  $id = url_to_postid( $url );
+  if(!empty($id) && get_post_type($id) == "post" && !empty(get_field('link', $id))) {
+    $url = get_field('link', $id);
+  }
+  return $url;
+}
+add_filter('the_permalink', __NAMESPACE__ . '\\replace_link');

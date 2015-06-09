@@ -29,9 +29,9 @@
 <?php endif; ?>
 <!-- *********** End of Quicklinks *********** -->
 <!-- *********** Intranets and Internets *********** -->
+<?php if( have_rows('intranets_and_internets') || have_rows('intranets_and_internets') ): ?>
 <div id="sites">
 <h1>Intranets and Internets</h1>
-<?php if( have_rows('intranets_and_internets') ): ?>
   <div class="right">
     <h2>Intranets</h2>
     <?php while ( have_rows('intranets_and_internets') ) : the_row(); ?>
@@ -40,17 +40,15 @@
       <?php endif; ?>
     <?php endwhile; ?>
   </div>
-<?php endif; ?>
 
-<?php if( have_rows('intranets_and_internets') ): ?>
   <h2>Internets</h2>
   <?php while ( have_rows('intranets_and_internets') ) : the_row(); ?>
     <?php if(get_sub_field('type') == "Internet"): ?>
       <h2><a href="<?= get_sub_field('link'); ?>" target="_blank"><?= get_sub_field('title'); ?></a></h2>
     <?php endif; ?>
   <?php endwhile; ?>
-<?php endif; ?>
 </div>
+<?php endif; ?>
 <!-- *********** End of Intranets and Internets *********** -->
 <!-- *********** 4 Pictures Area *********** -->
 <?php if( have_rows('image_grid') ): ?>
@@ -76,14 +74,7 @@
 <div id="divNews" style="position: relative;">
 <h1>What's New</h1>
 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-  <?php
-  if (!empty(get_field('link'))) {
-     $link = get_field('link');
-    } else {
-     $link = get_permalink();
-    }
-  ?>
-  <h2><a href="<?= $link; ?>"><?= get_the_title( ); ?></a></h2>
+  <h2><a href="<?php the_permalink(); ?>"><?= get_the_title( ); ?></a></h2>
   <p class="date"><?= get_the_date(); ?></p>
   <p><?= the_excerpt(); ?></p>
 <?php endwhile; ?>

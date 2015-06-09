@@ -193,6 +193,11 @@ list-style: lower-roman;
 margin:  0 0 10px 0;
 }
 
+#right {
+  float:right;
+  margin-right:9px;
+}
+
 #right ul
 {
 list-style: none;
@@ -361,6 +366,7 @@ padding: 0 5px;
 	.search-people
 	{
 	float: right;
+  display:none;
 	padding: 5px 20px 5px 10px;
 	}
 
@@ -607,34 +613,40 @@ border-bottom: 5px solid #006d81;
 
 		#sub-nav li.active a
 		{
-		background:  #b9dadf url(/wp-content/uploads/bullet-blue.gif) no-repeat 2px 6px!important;
+		background:  #b9dadf url(/wp-content/uploads/bullet-blue.gif) no-repeat 2px 6px;
 		}
 
 	/* Left sub-sub-nav */
 
-	#sub-sub-nav, .sub-menu
+	#sub-sub-nav, #sub-nav .sub-menu
 	{
 	list-style:  none !important;
 	margin:  0 0 2px 0 !important;
+  display: none;
 	}
 
-		#sub-sub-nav li, .sub-menu li
+  #sub-nav .current-menu-item.menu-item-has-children ul,
+  #sub-nav .current-menu-ancestor.current-menu-parent ul {
+    display:block;
+  }
+
+		#sub-sub-nav li, #sub-nav .sub-menu li
 		{
 		margin:  2px 0 0 0 !important;
 		}
 
-		#sub-sub-nav li a, .sub-menu li a
+		#sub-sub-nav li a, #sub-nav .sub-menu li a
 		{
-		background:  /*#e3f3f5*/ #EEE !important;
+		background:  /*#e3f3f5*/ #EEE;
 		color:  #006d81 !important;
 		display:  block !important;
 		width:  100% !important;
 		padding: 2px 12px/*5px 10px 5px 20px*/ !important;
 		}
 
-		#sub-sub-nav li a: hover, .sub-menu li a:hover
+		#sub-sub-nav li a: hover
 		{
-	   background: #EEE url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 25px 11px !important;
+	   background: #EEE url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 25px 11px;
 		color: #006d81 !important;
 		display: block !important;
 		width: 100% !important;
@@ -642,9 +654,9 @@ border-bottom: 5px solid #006d81;
 		padding: 2px 12px/*5px 10px 5px 20px*/ !important;
 		}
 
-		#sub-sub-nav li .active, #sub-sub-nav li.active a, .sub-menu li.active a
+		#sub-sub-nav li .active, #sub-sub-nav li.active a, #sub-nav .sub-menu li.active a
 		{
-		background: #EEE url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 4px 7px!important;
+		background: #EEE url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 4px 7px;
 		}
 
 	/* Right column */
