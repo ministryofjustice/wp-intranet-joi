@@ -24,9 +24,9 @@
       'menu_class'      => '',
       'menu'            => 'Primary Navigation',
     );
-    //wp_nav_menu($args);
+    wp_nav_menu($args);
     ?>
-    <div id="cssmenu">
+    <?php /*<div id="cssmenu">
       <ul>
         <li><a href="/index">Home</a></li>
         <li>
@@ -82,7 +82,7 @@
         <li><a href="/judicial_database/">Judicial database</a></li>
         <li><a href="/links">Useful links</a></li>
       </ul>
-    </div>
+    </div>*/?>
   </div>
   <!-- Top navigation end -->
 </div>

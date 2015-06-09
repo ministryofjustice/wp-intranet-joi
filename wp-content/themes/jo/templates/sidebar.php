@@ -38,6 +38,30 @@ if(empty($month) || $month == null) {
       <li><a href="/<?= $first_parent->post_name; ?>" class="current"><?php echo $first_parent->post_title; ?></a></li>
       <?php wp_nav_menu( $args ); ?>
     </ul>
+  <?php else: ?>
+    <ul id="left-nav">
+      <li><a href="/<?= $first_parent->post_name; ?>" class="current"><?php echo $first_parent->post_title; ?></a></li>
+      <ul id="sub-nav">
+        <?php $args = array(
+          'authors'      => '',
+          'child_of'     => $first_parent->ID,
+          'date_format'  => get_option('date_format'),
+          'depth'        => 2,
+          'echo'         => 1,
+          'exclude'      => '',
+          'include'      => '',
+          'link_after'   => '',
+          'link_before'  => '',
+          'post_type'    => 'page',
+          'post_status'  => 'publish',
+          'show_date'    => '',
+          'sort_column'  => 'menu_order, post_title',
+          'sort_order'   => '',
+          'title_li'     => false
+        ); ?>
+        <?php wp_list_pages( $args ); ?>
+      </ul>
+    </ul>
   <?php endif; ?>
 <?php endif; ?>
 </div>

@@ -21,7 +21,7 @@ use Roots\Sage\Extras;
       <!-- Main -->
       <?php $menu = get_field('menu', Extras\get_top_parent_ID()); ?>
 
-      <?php if (Config\display_sidebar() && !empty($menu)) : ?>
+      <?php if (Config\display_sidebar() && !empty($menu) && is_nav_menu($menu)) : ?>
 
         <div class="row" id="main">
           <?php include Wrapper\sidebar_path(); ?>
@@ -44,7 +44,7 @@ use Roots\Sage\Extras;
           <!-- Mid section end -->
         </div>
 
-      <?php elseif (!empty($menu)) : ?>
+      <?php elseif (!empty($menu) && is_nav_menu($menu)) : ?>
         <div class="row" id="main">
           <!-- Mid section -->
           <div class="column grid_12" id="mid">

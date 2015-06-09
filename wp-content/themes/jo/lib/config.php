@@ -3,6 +3,7 @@
 namespace Roots\Sage\Config;
 
 use Roots\Sage\ConditionalTagCheck;
+use Roots\Sage\Extras;
 
 /**
  * Define which pages shouldn't have the sidebar
@@ -32,10 +33,10 @@ function display_sidebar() {
         'is_404',
         'is_front_page',
         ['is_page_template', 'template-custom.php'],
-        ['is_page', ['links']],
         'is_search',
         'is_single',
-        'is_home'
+        'is_home',
+        __NAMESPACE__ . '\\no_children'
       ]
     );
 
@@ -43,4 +44,19 @@ function display_sidebar() {
   }
 
   return $display;
+}
+
+/**
+ * Don't display sidebar if there are no children.
+ */
+function no_children() {
+  global $post;
+  $children = get_pages('child_of='.Extras\get_top_parent_ID());
+  if(get_post_type($post->ID) == "page") {
+    if(count($children) > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 }
