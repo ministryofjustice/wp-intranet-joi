@@ -12,7 +12,7 @@ function setup() {
 
   register_nav_menus(array(
     'primary_navigation' => __('Primary Navigation', 'sage')
-  );
+  ));
 
   add_image_size( 'slides', 350, 230, true );
   add_image_size( 'image-grid', 250, 124, true );
