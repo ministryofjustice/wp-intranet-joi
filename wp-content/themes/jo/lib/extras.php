@@ -222,8 +222,10 @@ function get_top_parent_ID() {
  */
 function replace_link($url) {
   $id = url_to_postid( $url );
-  if(!empty($id) && get_post_type($id) == "post" && !empty(get_field('link', $id))) {
-    $url = get_field('link', $id);
+  $link = get_field('link', $id);
+  $post = get_post_type($id);
+  if(!empty($id) && $post == "post" && !empty($link)) {
+    $url = $link;
   }
   return $url;
 }
