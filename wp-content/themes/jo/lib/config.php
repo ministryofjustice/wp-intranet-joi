@@ -29,15 +29,15 @@ function display_sidebar() {
        * ['is_post_type_archive', ['foo', 'bar', 'baz']]
        *
        */
-      [
+      array(
         'is_404',
         'is_front_page',
-        ['is_page_template', 'template-custom.php'],
+        array('is_page_template', 'template-custom.php'),
         'is_search',
         'is_single',
         'is_home',
         __NAMESPACE__ . '\\no_children'
-      ]
+      )
     );
 
     $display = apply_filters('sage/display_sidebar', $conditionalCheck->result);

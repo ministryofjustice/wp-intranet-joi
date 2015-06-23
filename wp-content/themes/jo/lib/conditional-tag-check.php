@@ -16,10 +16,10 @@ class ConditionalTagCheck {
 
   public $result = true;
 
-  public function __construct($conditionals = []) {
+  public function __construct($conditionals = array()) {
     $this->conditionals = $conditionals;
 
-    $conditionals = array_map([$this, 'checkConditionalTag'], $this->conditionals);
+    $conditionals = array_map(array($this, 'checkConditionalTag'), $this->conditionals);
 
     if (in_array(true, $conditionals)) {
       $this->result = false;
