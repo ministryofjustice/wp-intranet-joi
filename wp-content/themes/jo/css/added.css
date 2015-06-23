@@ -1125,3 +1125,25 @@ cssmenu Nav
   background: none;
   padding: 0;
 }
+
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+.alignleft,
+.alignright {
+  margin-bottom: 25px;
+}
+.alignleft {
+  float: left;
+  margin-right: 25px;
+}
+.alignright {
+  float: right;
+  margin-left: 25px;
+}
