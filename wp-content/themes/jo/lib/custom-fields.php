@@ -1,6 +1,6 @@
 <?php
 
-/*if( function_exists('acf_add_local_field_group') ):
+if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array (
   'key' => 'group_55670b2137d2d',
@@ -524,24 +524,8 @@ acf_add_local_field_group(array (
         'id' => '',
       ),
       'save_format' => 'id',
-      'container' => 0,
-      'allow_null' => 0,
-    ),
-    array (
-      'key' => 'field_556f169900ae7',
-      'label' => 'Children Pages',
-      'name' => 'children',
-      'type' => 'true_false',
-      'instructions' => 'Should this menu appear on any child pages',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array (
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'message' => '',
-      'default_value' => 0,
+      'container' => 'nav',
+      'allow_null' => 1,
     ),
   ),
   'location' => array (
@@ -551,12 +535,20 @@ acf_add_local_field_group(array (
         'operator' => '==',
         'value' => 'page',
       ),
-    ),
-    array (
       array (
         'param' => 'page_type',
         'operator' => '!=',
         'value' => 'front_page',
+      ),
+      array (
+        'param' => 'page_type',
+        'operator' => '!=',
+        'value' => 'posts_page',
+      ),
+      array (
+        'param' => 'page_type',
+        'operator' => '==',
+        'value' => 'top_level',
       ),
     ),
   ),
@@ -568,4 +560,4 @@ acf_add_local_field_group(array (
   'hide_on_screen' => '',
 ));
 
-endif;*/
+endif;

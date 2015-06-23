@@ -16,7 +16,7 @@ if(empty($month) || $month == null) {
 <div class="column grid_3">
 <?php if(is_post_type_archive('event')): ?>
 <ul id="left-nav">
-  <li class="current"><a href="<?= get_site_url(); ?>/calendar/"><?= $year; ?> Event Calendar</a></li>
+  <li><a href="<?= get_site_url(); ?>/calendar/" class="current"><?= $year; ?> Events Calendar</a></li>
   <ul id="sub-nav">
   <?php for($i = 1; $i <= 12; $i++): $month_name = DateTime::createFromFormat('!n', $i); ?>
     <li class="<?= Extras\month_match($month, $i); ?>"><a href="<?= get_site_url() ?>/calendar/<?= $year; ?>/<?= sprintf("%02d", $i) ?>"><?= $month_name->format('F'); ?></a></li>

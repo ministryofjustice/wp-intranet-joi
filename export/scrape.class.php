@@ -133,7 +133,7 @@ class ScrapeSite
         if (strpos($content_type, 'text/html') !== false) {
 
           $post_type = $this->postType($url);
-          //$this->checkSidebar($crawler, $url);
+          $this->checkSidebar($crawler, $url);
           if($post_type == "page") {
             $parent = $this->postParent($url);
             $scrape = [
@@ -145,8 +145,8 @@ class ScrapeSite
               "post_type" => $post_type
             ];
           } elseif($post_type == "archive") {
-            //$this->getExternal($crawler);
-            $scrape = $this->newsArchive($crawler);
+            $scrape = $this->getExternal($crawler);
+            //$scrape = $this->newsArchive($crawler);
           } elseif($post_type == "post") {
             $scrape = [
               "post_title" => $this->postTitle($crawler, $parent),
@@ -190,14 +190,56 @@ class ScrapeSite
    */
   protected function getExternal($crawler)
   {
-    $crawler->filter('#wide h2 a')->each(function ($node, $i) {
-      $url = $node->attr('href');
-      preg_match("/http(s|):\/\/.*/ /*", $url, $matches);
-      preg_match("/news\/.*/ /*", $url, $matches2);
-      if(!empty($matches) || empty($matches2)) {
-        print $node->text() . "&nbsp; &nbsp; &nbsp; " . $url . "<br>";
+    $crawler->filter('#wide')->each(function ($node, $i) use (&$scrape) {
+      $html = str_replace("<hr />", "<hr>", $node->html());
+      $posts = explode("<hr>", $html);
+      array_shift($posts);
+
+      $scrape = [];
+      foreach ($posts as $post) {
+        preg_match("/<h2><a\s[^>]*href=\"([^\"]*)\"[^>]*>(.*)<\/a><\/h2>/siU", $post, $matches);
+        $url = $matches[1];
+        if(!empty($url)) {
+          preg_match("/http(s|):\/\/.*/", $url, $matches2);
+          preg_match("/news\/.*/", $url, $matches3);
+          if(!empty($matches2) || (empty($matches2) && empty($matches3))) {
+            $title = $matches[2];
+            $title = trim(strip_tags($title));
+            $title = preg_replace('/\s+/', ' ', $title);
+            $title = str_replace("&amp;", "&", $title);
+
+            $date = "";
+            preg_match("/<(p|span) class=\"date\">\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*<\/(p|span)>/", $post, $dates);
+            if(!empty($dates[0])) {
+              $date = trim(strip_tags($dates[0]));
+              $date = DateTime::createFromFormat('j F Y', $date);
+              $date = $date->format('Y-m-d H:i:s');
+            }
+
+            $post = preg_replace("/<h2>\X+<\/h2>/", "", $post);
+            $post = preg_replace("/<(p|span) class=\"date\">\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*<\/(p|span)>/", "", $post);
+            $post = preg_replace("/<!--.*-->/", "", $post);
+            $post = preg_replace('/\s+/', ' ', $post);
+            $post = trim($post);
+
+            if(empty($matches2)) {
+              $url = "http://intranet-joi.dev/" . $url;
+              $url = str_replace(".htm", "", $url);
+            }
+
+            $scrape[] = [
+              "post_title" => $title,
+              "post_content" => $post,
+              "post_date" => $date,
+              "external_url" => $url,
+              "post_type" => "post"
+            ];
+
+          }
+        }
       }
     });
+    return $scrape;
   }
 
   /**
@@ -272,7 +314,7 @@ class ScrapeSite
       $end = '<!-- InstanceEndEditable -->';
 
       $post_content = stristr($post_content, $start);
-      $dapost_contentta = substr($post_content, strlen($start));
+      $post_content = substr($post_content, strlen($start));
       $stop = stripos($post_content, $end);
       $post_content = substr($post_content, 0, $stop);
       $post_content = preg_replace("/<!--.*-->/", "", $post_content);
@@ -372,8 +414,8 @@ class ScrapeSite
     } else {
       $post_name = $file_name;
     }
-    if(is_numeric($matches[2])) {
-      $matches[2] .= "-2";
+    if(is_numeric($post_name)) {
+      $post_name .= "-2";
     }
     return $post_name;
   }
@@ -415,26 +457,31 @@ class ScrapeSite
    */
   protected function import()
   {
-    $json = file_get_contents( $this->json );
-    $pages = json_decode( $json );
-    foreach ($pages as $page) {
-      $post = array(
-        'post_content' => $page->post_content,
-        'post_title' => $page->post_title,
-        'post_name' => $page->post_name,
-        'post_date' => $page->post_date,
-        'post_date_gmt' => $page->post_date,
-        'post_type' => $page->post_type,
-        'post_status' => 'publish',
-        'post_parent' => $this->getID($page->post_parent),
-      );
-      if($this->import == true) {
-        wp_insert_post( $post, $error );
-      }
+    if($this->import == true) {
+      $json = file_get_contents( $this->json );
+      $pages = json_decode( $json );
+      foreach ($pages as $page) {
+        $post = array(
+          'post_content' => $page->post_content,
+          'post_title' => $page->post_title,
+          'post_name' => $page->post_name,
+          'post_date' => $page->post_date,
+          'post_date_gmt' => $page->post_date,
+          'post_type' => $page->post_type,
+          'post_status' => 'publish',
+          'post_parent' => $this->getID($page->post_parent),
+        );
 
-      if(!empty($error)) {
-        print "There was an error importing the posts.";
-        die();
+        $id = wp_insert_post( $post, $error );
+
+        if(!empty($id) && !empty($page->external_url)) {
+          update_field('field_556ee701c2f60', $page->external_url, $id);
+        }
+
+        if(!empty($error)) {
+          print "There was an error importing the posts.";
+          die();
+        }
       }
     }
   }

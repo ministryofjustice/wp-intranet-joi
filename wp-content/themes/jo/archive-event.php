@@ -41,7 +41,9 @@ $query = Extras\event_query();
   <?php endif; ?>
 </div>
 
+<?php if ($query->have_posts()) : ?>
 <div class="cal">
   <div class="floatRight"><a href="<?= get_site_url() . "/calendar/" . $next; ?>">Next month</a> &gt;&gt;</div>
   <div>&lt;&lt; <a href="<?= get_site_url() . "/calendar/" . $prev; ?>">Previous month</a> </div>
 </div>
+<?php endif; ?>
