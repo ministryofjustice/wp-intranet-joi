@@ -1,0 +1,20 @@
+/* Reset.css */
+.nav1 {
+	float:right; 
+	top: 100px; 
+	margin: 20px 0px; 
+	width:350px; 
+	height: auto; 
+	background:#999;   
+	font-size: 1em; 
+	color: yellow; 
+	font-weight: bold;
+	}
+@media screen and (max-width: 480px){
+.nav1{ 
+	float: both;
+	background:#FFF;
+	color: #000;
+	margin-left: 0;
+  }
+}

@@ -19,10 +19,6 @@
 .grid_15 { width:1040px; }
 .grid_16 { width:1110px; }
 
-#mid.grid_9 {
-  width:566px;
-}
-
 
 .column {
 	margin: 0 5px;
@@ -31,12 +27,12 @@
 	display: inline;
 }
 .row {
-	width: 1000px;
+	width: 1000/*1050*/px; 
 	margin: 0 auto;
 	overflow: hidden;
 }
 .row .row {
 	margin: 0 -5px;
-	width: 1000px;
+	width: auto;
 	display: inline-block;
 }

@@ -2,7 +2,7 @@
   <form action="<?= esc_url(home_url('/')); ?>" method="get" name="query" id="query">
     <label for="search" class="hidden-text">Search:</label>
     <input id="search" name="s" class="searchbox" size="30" type="text">
-    <input id="submit" value="Go" class="searchbutton" title="Search" type="submit">
+    <input id="submit" value="Go" class="searchbutton" title="Search" type="submit"><br><br>
     Search:
     <input name="searchtype" id="intranet" value="intranet" checked="checked" type="radio">
     <label for="intranet">intranet</label>
