@@ -230,3 +230,12 @@ function replace_link($url) {
   return $url;
 }
 add_filter('the_permalink', __NAMESPACE__ . '\\replace_link');
+
+
+function special_nav_class($classes, $item){
+  if( strpos(get_permalink(), $item->url) ){
+    $classes[] = 'current-menu-item menu-item-has-children';
+  }
+  return $classes;
+}
+add_filter('nav_menu_css_class' , __NAMESPACE__ . '\\special_nav_class' , 10 , 2);
