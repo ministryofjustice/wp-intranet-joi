@@ -233,8 +233,9 @@ add_filter('the_permalink', __NAMESPACE__ . '\\replace_link');
 
 
 function special_nav_class($classes, $item){
+  //var_dump($item);
   if( strpos(get_permalink(), $item->url) ){
-    $classes[] = 'current-menu-item menu-item-has-children';
+    $classes[] = 'current-menu-item menu-item-has-children active ';
   }
   return $classes;
 }
