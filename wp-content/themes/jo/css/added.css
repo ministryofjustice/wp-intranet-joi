@@ -1154,5 +1154,27 @@ height: 11px;
   margin-left: 20px;
 }
 
+.navigation.posts-navigation h2 {
+  display: none;
+}
+.nav-links {
+  display: block;
+  clear: both;
+  margin:15px 0;
+}
+.nav-previous a, .nav-next a {
+  font-size:14px;
+  background:#132646;
+  padding:10px;
+  display: block;
+  color:#fff;
+  text-decoration: none;
+}
+.nav-previous {
+  float:left;
+}
+.nav-next {
+  float:right;
+}
 
 
