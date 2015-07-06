@@ -75,7 +75,7 @@
 <h1>What's New</h1>
 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
   <h2><a href="<?php the_permalink(); ?>"><?= get_the_title( ); ?></a></h2>
-  <p class="date"><?= get_the_date(); ?></p>
+  <p class="date"><?= get_the_date("j F Y"); ?></p>
   <p><?= the_excerpt(); ?></p>
 <?php endwhile; ?>
 <h2><a href="/archived-news"><img src="/wp-content/uploads/homepage/news-archive.png" width="180" height="30" border="0" alt="News archive image" /></a></h2>
