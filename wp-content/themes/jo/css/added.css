@@ -164,8 +164,8 @@ margin:  0 0 10px 0;
 
 #mid ul li ul
 {
-margin: 0!important;
-padding: 0;
+margin-top:30px !important;
+background: #fff;
 }
 
 #mid ul ul li
@@ -808,7 +808,8 @@ cssmenu Nav
   box-sizing: border-box;
   z-index: 1001;
 }
-#cssmenu .active { background: #b9dadf; color: #000;}
+
+#cssmenu .current-page-ancestor a { background: #b9dadf; color: #000;}
 #cssmenu:after,
 #cssmenu > ul:after {
   content: ".";
@@ -1124,4 +1125,32 @@ height: 11px;
   #cssmenu .submenu-button.submenu-opened:after {
     display: none;
   }
+}*/
+// WordPress Generated Classes
+// http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+
+// Media alignment
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
 }
+.aligncenter {
+  display: block;
+  margin: 20px auto;
+}
+.alignleft,
+.alignright {
+  margin-bottom: 20px;
+}
+.alignleft {
+  float: left;
+  margin-right: 20px;
+}
+.alignright {
+  float: right;
+  margin-left: 20px;
+}
+
+
+
