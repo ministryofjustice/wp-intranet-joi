@@ -1,1 +1,1 @@
-<li><?= strip_tags(get_field('title')) ?></li>
+<li><?= strip_tags(get_field('title'), "<a>") ?></li>
