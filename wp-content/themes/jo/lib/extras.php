@@ -240,3 +240,17 @@ function special_nav_class($classes, $item){
   return $classes;
 }
 add_filter('nav_menu_css_class' , __NAMESPACE__ . '\\special_nav_class' , 10 , 2);
+
+/**
+ * Show all parents regardless of post status.
+ * See: http://www.mightyminnow.com/2014/09/include-privatedraft-pages-in-parent-dropdowns/
+ *
+ * @param   array  $args  Original get_pages() $args.
+ * @return  array  $args  Args set to also include posts with pending, draft, and private status.
+ */
+function dropdown_pages( $args ) {
+  $args['post_status'] = array( 'publish', 'pending', 'draft', 'private' );
+  return $args;
+}
+add_filter('page_attributes_dropdown_pages_args', __NAMESPACE__ . '\\dropdown_pages');
+add_filter('quick_edit_dropdown_pages_args', __NAMESPACE__ . '\\dropdown_pages');
