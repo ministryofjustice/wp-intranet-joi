@@ -18,7 +18,6 @@ $sage_includes = array(
   'lib/assets.php',                // Scripts and stylesheets
   'lib/titles.php',                // Page titles
   'lib/cpt.php',
-  'lib/custom-fields.php',
   'lib/extras.php',                // Custom functions
 );
 
