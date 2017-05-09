@@ -224,10 +224,10 @@ Easy Slider / Carousel
 		position:relative;
 		width:30px;
 		height:77px;
-		background:url(/wp-content/uploads/homepage/btn_previous.png)
+		background:url(../images/homepage/btn_previous.png)
 		}
 
-	#nextBtn a, #slider1next a{ background:url(/wp-content/uploads/homepage/btn_next.png)
+	#nextBtn a, #slider1next a{ background:url(../images/homepage/btn_next.png)
 	}
 
 	/* numeric controls */

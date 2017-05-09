@@ -85,7 +85,7 @@ margin-bottom: 10px;
 font-size: 130% /*1.6em*/;
 font-weight: bold;
 line-height: 20px;
-background: url(/wp-content/uploads/title-bullet.gif) no-repeat 0 4px;
+background: url(../images/title-bullet.gif) no-repeat 0 4px;
 padding:  0 0 0 25px;
 color:  #006d81;
 }
@@ -96,7 +96,7 @@ margin-bottom: 15px;
 font-size: 125% /*1.4em*/;
 font-weight: bold;
 line-height: 22px;
-background: url(/wp-content/uploads/sub-title-bullet.gif) no-repeat 0 2px;
+background: url(../images/sub-title-bullet.gif) no-repeat 0 2px;
 padding:  0 0 0 25px;
 }
 
@@ -157,7 +157,7 @@ margin: 0 0 15px 0;
 
 #mid ul li
 {
-background:  url(/wp-content/uploads/bullet-blue.gif) no-repeat 8px 5px;
+background:  url(../images/bullet-blue.gif) no-repeat 8px 5px;
 padding:  0 0 0 22px;
 margin:  0 0 10px 0;
 }
@@ -172,14 +172,14 @@ display: block;
 
 #mid ul ul li
 {
-background: url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 8px 8px;
+background: url(../images/bullet-blue-small.gif) no-repeat 8px 8px;
 padding:  0 0 0 18px;
 margin:  0 0 6px 0;
 }
 
 #mid .anchor li
 {
-background: url(/wp-content/uploads/arrow-blue-down.gif) no-repeat 8px 6px;
+background: url(../images/arrow-blue-down.gif) no-repeat 8px 6px;
 padding:  0 0 0 20px;
 }
 
@@ -203,7 +203,7 @@ margin: 0 0 10px 0;
 
 #right ul li
 {
-background: url(/wp-content/uploads/bullet-blue.gif) no-repeat 8px 5px;
+background: url(../images/bullet-blue.gif) no-repeat 8px 5px;
 padding:  0 0 0 22px;
 margin:  0 0 8px 0;
 }
@@ -457,7 +457,7 @@ margin: 0 0 15px 0;
 
 #wide ul li
 {
-background:  url(/wp-content/uploads/bullet-blue.gif) no-repeat 8px 5px;
+background:  url(../images/bullet-blue.gif) no-repeat 8px 5px;
 padding:  0 0 0 22px;
 margin:  0 0 10px 0;
 }
@@ -483,7 +483,7 @@ padding-bottom: 10px;
 
     .backtotop a
     {
-    background: url(/wp-content/uploads/arrow-blue-up.gif) no-repeat 8px 0!important;
+    background: url(../images/arrow-blue-up.gif) no-repeat 8px 0!important;
     padding:  0 0 0 20px;
     }
 
@@ -562,7 +562,7 @@ border-bottom: 5px solid #006d81;
 
     #left-nav li a: hover
     {
-    background:  #CCCCCC url(/wp-content/uploads/bullet-white.gif) no-repeat 5px 10px!important;
+    background:  #CCCCCC url(../images/bullet-white.gif) no-repeat 5px 10px!important;
     display:  block;
     width:  100%;
     text-decoration:  none;
@@ -572,7 +572,7 @@ border-bottom: 5px solid #006d81;
 
     #left-nav li .current
     {
-  background: #006d81 url(/wp-content/uploads/bullet-white.gif) no-repeat 2px 9px !important;
+  background: #006d81 url(../images/bullet-white.gif) no-repeat 2px 9px !important;
     }
 
   /* Left sub-nav */
@@ -599,7 +599,7 @@ border-bottom: 5px solid #006d81;
 
     #sub-nav li a:hover
     {
-    background:  #b9dadf url(/wp-content/uploads/bullet-blue.gif) no-repeat 2px 9px !important;
+    background:  #b9dadf url(../images/bullet-blue.gif) no-repeat 2px 9px !important;
     color:  #006d81;
     display:  block;
     width:  100%;
@@ -609,7 +609,7 @@ border-bottom: 5px solid #006d81;
 
     #sub-nav li.active > a, #sub-nav li.current-menu-ancestor > a
     {
-    background:  #b9dadf url(/wp-content/uploads/bullet-blue.gif) no-repeat 2px 6px;
+    background:  #b9dadf url(../images/bullet-blue.gif) no-repeat 2px 6px;
     }
 
   /* Left sub-sub-nav */
@@ -645,7 +645,7 @@ border-bottom: 5px solid #006d81;
 
     #sub-nav li .sub-menu li a: hover
     {
-     background: #EEE url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 25px 11px !important;
+     background: #EEE url(../images/bullet-blue-small.gif) no-repeat 25px 11px !important;
     color: #006d81;
     display: block;
     width: 100%;
@@ -655,14 +655,14 @@ border-bottom: 5px solid #006d81;
 
     #sub-nav li .sub-menu li.active > a
     {
-    background: #EEE url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 4px 7px
+    background: #EEE url(../images/bullet-blue-small.gif) no-repeat 4px 7px
     }
 
   /* Right column */
 
 .widget
   {
-  background:  url(/wp-content/uploads/widget-bottom-g.gif) no-repeat bottom left;
+  background:  url(../images/widget-bottom-g.gif) no-repeat bottom left;
   color:  #006d81;
     padding: 0 0 11px 0;
   margin:  0 0 20px 0;
@@ -753,7 +753,7 @@ display: none;
 .head { font-size: 125%; }
 
 .thisweek { margin: 0; background-color: #eee; border: 1px solid #036; padding: 3px; font-size: 80%}
-.thisweek ul li { background: url(/wp-content/uploads/bullet-blue-small.gif) no-repeat 8px 8px; padding:  0 0 0 18px; margin:  0 0 6px 0; }
+.thisweek ul li { background: url(../images/bullet-blue-small.gif) no-repeat 8px 8px; padding:  0 0 0 18px; margin:  0 0 6px 0; }
 .thisweek .header { text-align: center; font-size: 120%; font-weight: bold; }
 
 .cal { background: #EEE; color: #000; margin: 20px 0 0 0; }

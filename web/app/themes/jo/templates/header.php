@@ -4,7 +4,7 @@
   <div class="column grid_15" id="header">
     <div class="row">
       <!-- Logo -->
-      <div class="column grid_9"><a href="/"><img src="/wp-content/uploads/logo/new-intranet-logo-sm.png" alt="Judicial Office Intranet" title="Judicial Office Intranet" /></a></div>
+      <div class="column grid_9"><a href="/"><img src="<?= get_template_directory_uri(); ?>/images/logo/new-intranet-logo-sm.png" alt="Judicial Office Intranet" title="Judicial Office Intranet" /></a></div>
       <!-- Logo end -->
       <div class="column grid_2"></div>
       <!-- Search -->

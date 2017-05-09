@@ -78,7 +78,7 @@
   <p class="date"><?= get_the_date("j F Y"); ?></p>
   <p><?= the_excerpt(); ?></p>
 <?php endwhile; ?>
-<h2><a href="/archived-news"><img src="/wp-content/uploads/homepage/news-archive.png" width="180" height="30" border="0" alt="News archive image" /></a></h2>
+<h2><a href="/archived-news"><img src="<?= get_template_directory_uri(); ?>/images/homepage/news-archive.png" width="180" height="30" border="0" alt="News archive image" /></a></h2>
 </div>
 <?php endif; ?>
 <!-- ***********  End of News Area *********** -->
