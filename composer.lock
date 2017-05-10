@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8347a33b370d3abeaa6515c4b4bc5aef",
+    "content-hash": "1aef6282e0878a9c1d0b7bfa9053dd32",
     "packages": [
         {
             "name": "acf/advanced-custom-fields-pro",
