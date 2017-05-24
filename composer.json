@@ -51,7 +51,7 @@
     "acf/advanced-custom-fields-pro": "^5",
     "wpackagist-plugin/advanced-custom-fields-nav-menu-field": "^2.0",
     "ministryofjustice/wp-rewrite-media-to-s3": "^0.1.0",
-    "wpackagist-plugin/google-analytics-dashboard-for-wp": "4.9.6.2",
+    "wpackagist-plugin/google-analytics-dashboard-for-wp": "^5",
     "wpackagist-plugin/contact-form-7": "^4.7",
     "wpackagist-plugin/tinymce-advanced": "^4.5"
   },

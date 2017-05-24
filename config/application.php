@@ -34,9 +34,12 @@ if (file_exists($env_config)) {
 
 /**
  * URLs
+ * Notice: We're *temporarily* serving front-end traffic over HTTP to support older hardware.
+ *         In future we should remove the str_replace to default to HTTPS.
  */
-define('WP_HOME', env('WP_HOME'));
-define('WP_SITEURL', env('WP_SITEURL'));
+define('WP_HOME', str_replace('https://', 'http://', env('WP_HOME')));
+define('WP_SITEURL', str_replace('https://', 'http://', env('WP_SITEURL')));
+define('FORCE_SSL_ADMIN', true);
 
 /**
  * Custom Content Directory
