@@ -1,4 +1,18 @@
 <?php
+
+// don't redirect on login page
+if ( $GLOBALS['pagenow'] !== 'wp-login.php' ) {
+
+    if ( current_user_can('editor') || current_user_can('administrator') ) {
+
+    // redirect everyone who isn't an editor or administrator
+    } else {
+        wp_redirect( 'https://intranet.justice.gov.uk/?agency=judicial-office', 301) ;
+        exit;
+    }
+
+}
+
 /**
  * Sage includes
  *
