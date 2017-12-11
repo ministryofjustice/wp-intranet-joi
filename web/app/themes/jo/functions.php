@@ -1,17 +1,36 @@
 <?php
+/**
+ * Detect if we're running under WP-CLI.
+ *
+ * @return boolean
+ */
+function is_wp_cli() {
+    return defined('WP_CLI') && WP_CLI;
+}
 
-// don't redirect on login page
-if ( $GLOBALS['pagenow'] !== 'wp-login.php' ) {
+/**
+ * Convenience method to determine if we're on a login page.
+ *
+ * @return bool
+ */
+function is_login_page() {
+    return stripos($_SERVER["SCRIPT_NAME"], '/wp/') !== false;
+}
 
-    if ( current_user_can('editor') || current_user_can('administrator') ) {
-
-    // redirect everyone who isn't an editor or administrator
-    } else {
-        wp_redirect( 'https://intranet.justice.gov.uk/?agency=judicial-office', 301) ;
+/**
+ * Redirect all users to the new intranet who are:
+ *   - not logged in
+ *   - are not on the login page
+ *   - and are not accessing the site from the wp cli
+ */
+function redirect_to_new_site() {
+    if ( !is_user_logged_in() && !is_login_page() && !is_wp_cli() ) {
+        wp_redirect( 'https://intranet.justice.gov.uk/?agency=judicial-office', 301);
         exit;
     }
-
 }
+add_action('init', __NAMESPACE__ . '\\redirect_to_new_site');
+
 
 /**
  * Sage includes
